@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background: rgb(67, 51, 209);
+            color: white;
+            font-family: Arial, sans-serif
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em Java Script</p>
+    <div id = "msg">Clique em mim</div>
+    <script>
+        // DOM - Document Object Model
+
+        // O DOM é uma interface de programação para documentos HTML e XML. Ele representa a estrutura do documento como uma árvore de objetos, permitindo que os desenvolvedores acessem e manipulem o conteúdo, a estrutura e o estilo da página web de forma dinâmica usando JavaScript.
+
+        // Acessando elementos do DOM
+
+        // document.getElementById() - Acessa um elemento pelo seu ID
+
+        // document.getElementsByClassName() - Acessa elementos pela classe
+
+        // document.getElementsByTagName() - Acessa elementos pela tag
+
+        // document.querySelector() - Acessa o primeiro elemento que corresponde a um seletor CSS
+
+        // document.querySelectorAll() - Acessa todos os elementos que correspondem a um seletor CSS
+
+        // Manipulando o DOM
+
+        // element.innerHTML - Altera o conteúdo HTML de um elemento
+
+        // element.textContent - Altera o conteúdo de texto de um elemento
+
+        // element.style.property - Altera o estilo de um elemento
+
+        // element.setAttribute() - Define um atributo para um elemento
+
+        // element.addEventListener() - Adiciona um evento a um elemento
+
+        // element.remove() - Remove um elemento do DOM
+
+        /*
+        window.document.writeln(window.document.title); // Escreve o título da página
+
+        window.document.writeln(`<br>${window.document.URL}`); // Escreve a URL da página
+
+        window.document.writeln(`<br>${window.document.body}`); // Escreve o corpo da página
+
+        window.document.writeln(`<br>${window.document.head}`); // Escreve o cabeçalho da página
+
+        window.document.writeln(`<br>${window.document.forms}`); // Escreve os formulários da página
+
+        window.document.writeln(`<br>${window.document.links}`); // Escreve os links da página
+
+        window.document.writeln(`<br>${window.document.images}`); // Escreve as imagens da página
+
+        window.document.writeln(`<br>${window.document.scripts}`); // Escreve os scripts da página
+
+        window.document.writeln(`<br>${window.document.styleSheets}`); // Escreve os estilos da página 
+        
+
+        var p1 = document.getElementsByTagName('p')[1]; // Acessa o primeiro parágrafo
+        document.write(p1.innerText);
+        
+        var p2 = document.getElementsByTagName('p')[1]; // Acessa o segundo parágrafo
+
+        var div = document.getElementsByTagName('div')[0]; // Acessa a primeira div
+        p1.innerHTML = 'Alterando o conteúdo do primeiro parágrafo'; // Altera o conteúdo do primeiro parágrafo
+
+        p2.textContent = 'Alterando o conteúdo do segundo parágrafo'; // Altera o conteúdo do segundo parágrafo
+
+        div.style.backgroundColor = 'red'; // Altera a cor de fundo da div
+
+        div.style.color = 'white'; // Altera a cor do texto da div
+
+        div.style.padding = '10px'; // Altera o padding da div
+
+        div.style.border = '1px solid black'; // Altera a borda da div
+
+        div.style.borderRadius = '5px'; // Altera o raio da borda da div
+
+        div.style.cursor = 'pointer'; // Altera o cursor da div
+        */
+        var corpo = document.body;
+        var p1 = document.getElementsByTagName('p')[1]; 
+        /*
+        var d = document.getElementById('msg');
+        d.style.backgroundColor = 'red';
+        d.innerText = 'Clicou na div';
+        
+        var d = document.getElementByName('msg'); {0}
+        d.innerText = 'Clicou na div';
+        */
+        var d = document.querySelector('div#msg');
+        d.style.color = "blue";
+        d. style.backgroundColor = 'white';
+
+        
+    </script> 
+</body>
+</html>
