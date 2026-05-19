@@ -1,0 +1,4730 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="IEADIP Guimarânia – Igreja Evangélica Assembleia de Deus IP"
+    />
+    <title>IEADIP – Guimarânia | Igreja Evangélica Assembleia de Deus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Raleway:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* ===== VARIABLES ===== */
+      :root {
+        --gold-1: #f0d080;
+        --gold-2: #c9a84c;
+        --gold-3: #a87d2a;
+        --gold-grad: linear-gradient(
+          135deg,
+          #f0d080 0%,
+          #c9a84c 50%,
+          #f0d080 100%
+        );
+        --gold-grad-h: linear-gradient(90deg, #c9a84c, #f0d080, #c9a84c);
+        --navy: #0a1628;
+        --navy-mid: #0d2040;
+        --dark: #1a1a1a;
+        --black: #0f0f0f;
+        --glass: rgba(255, 255, 255, 0.04);
+        --glass-border: rgba(201, 168, 76, 0.2);
+        --text: rgba(255, 255, 255, 0.85);
+        --muted: rgba(255, 255, 255, 0.48);
+        --shadow-gold: 0 0 30px rgba(201, 168, 76, 0.18);
+        --ease: all 0.38s cubic-bezier(0.25, 0.8, 0.25, 1);
+        --green: #4caf82;
+        --red: #f06060;
+        --blue: #5b9bd5;
+        --purple: #b088f0;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+      body {
+        font-family: "Raleway", sans-serif;
+        background: var(--black);
+        color: #fff;
+        overflow-x: hidden;
+        line-height: 1.7;
+      }
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a0a0a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--gold-2);
+        border-radius: 3px;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Cormorant Garamond", serif;
+      }
+      .gold-text {
+        background: var(--gold-grad);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .section-tag {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold-2);
+        margin-bottom: 0.75rem;
+      }
+      .section-title {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+      }
+      .section-line {
+        width: 60px;
+        height: 2px;
+        background: var(--gold-grad-h);
+        margin: 0 auto;
+        border-radius: 2px;
+      }
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        padding: 0 1.5rem;
+      }
+      section {
+        position: relative;
+        z-index: 5;
+        padding: 7rem 2rem;
+      }
+      .container {
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+
+      /* ===== PARTICLES ===== */
+      #ptc {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      .pt {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(201, 168, 76, 0.5),
+          transparent
+        );
+        animation: floatP linear infinite;
+      }
+      @keyframes floatP {
+        0% {
+          transform: translateY(100vh) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.8;
+        }
+        90% {
+          opacity: 0.2;
+        }
+        100% {
+          transform: translateY(-10vh) rotate(720deg);
+          opacity: 0;
+        }
+      }
+
+      /* ===== HEADER ===== */
+      #hdr {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        padding: 1.1rem 2.5rem;
+        transition: var(--ease);
+      }
+      #hdr.stk {
+        background: rgba(10, 22, 40, 0.97);
+        backdrop-filter: blur(20px);
+        padding: 0.8rem 2.5rem;
+        border-bottom: 1px solid var(--glass-border);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      }
+      .hdr-in {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+      .logo-area {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-shrink: 0;
+      }
+      .logo-icon {
+        width: 44px;
+        height: 44px;
+        background: var(--gold-grad);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        color: var(--navy);
+        font-weight: 900;
+        animation: pulseL 3s ease-in-out infinite;
+      }
+      @keyframes pulseL {
+        0%,
+        100% {
+          box-shadow: 0 0 10px rgba(201, 168, 76, 0.3);
+        }
+        50% {
+          box-shadow: 0 0 22px rgba(201, 168, 76, 0.7);
+        }
+      }
+      .logo-main {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        background: var(--gold-grad);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 2px;
+        display: block;
+        line-height: 1;
+      }
+      .logo-sub {
+        font-size: 0.63rem;
+        color: var(--muted);
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+      #nav {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+      }
+      #nav ul {
+        display: flex;
+        list-style: none;
+        gap: 0.2rem;
+      }
+      .nl {
+        display: block;
+        padding: 0.48rem 0.85rem;
+        font-size: 0.76rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.68);
+        border-radius: 30px;
+        transition: var(--ease);
+        position: relative;
+      }
+      .nl::after {
+        content: "";
+        position: absolute;
+        bottom: 2px;
+        left: 50%;
+        right: 50%;
+        height: 1px;
+        background: var(--gold-2);
+        transition: var(--ease);
+      }
+      .nl:hover,
+      .nl.act {
+        color: var(--gold-1);
+      }
+      .nl:hover::after,
+      .nl.act::after {
+        left: 15%;
+        right: 15%;
+      }
+      .btn-vis {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1.4rem;
+        background: var(--gold-grad);
+        border-radius: 30px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--navy);
+        transition: var(--ease);
+        box-shadow: 0 4px 20px rgba(201, 168, 76, 0.35);
+      }
+      .btn-vis:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(201, 168, 76, 0.55);
+      }
+      .ham {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+      }
+      .ham span {
+        display: block;
+        width: 26px;
+        height: 2px;
+        background: var(--gold-1);
+        border-radius: 2px;
+        transition: 0.3s;
+      }
+      .mob-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(10, 22, 40, 0.98);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--glass-border);
+        z-index: 999;
+        padding: 1.5rem;
+      }
+      .mob-menu.open {
+        display: block;
+      }
+      .mobl {
+        display: block;
+        padding: 0.85rem 1rem;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.88rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+        transition: var(--ease);
+      }
+      .mobl:hover {
+        color: var(--gold-1);
+        padding-left: 1.5rem;
+      }
+      .mobl.cta {
+        margin-top: 0.75rem;
+        text-align: center;
+        background: var(--gold-grad);
+        color: var(--navy) !important;
+        border-radius: 30px;
+        font-weight: 700;
+      }
+
+      /* ===== HERO ===== */
+      #inicio {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 0;
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background:
+          radial-gradient(
+            ellipse at 20% 50%,
+            rgba(13, 32, 64, 0.8),
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse at 80% 20%,
+            rgba(201, 168, 76, 0.1),
+            transparent 50%
+          ),
+          linear-gradient(
+            160deg,
+            #030810 0%,
+            #0a1628 40%,
+            #0d2040 70%,
+            #050c1a 100%
+          );
+      }
+      .hero-bg::before {
+        content: "✝";
+        position: absolute;
+        bottom: -5%;
+        right: 5%;
+        font-size: clamp(200px, 35vw, 500px);
+        color: rgba(201, 168, 76, 0.035);
+        font-family: serif;
+        line-height: 1;
+        pointer-events: none;
+      }
+      .hero-ov {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        background: repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(201, 168, 76, 0.013) 2px,
+          rgba(201, 168, 76, 0.013) 4px
+        );
+      }
+      .hero-cnt {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        padding: 8rem 2rem 5rem;
+        max-width: 920px;
+      }
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: rgba(201, 168, 76, 0.1);
+        border: 1px solid rgba(201, 168, 76, 0.3);
+        backdrop-filter: blur(8px);
+        padding: 0.4rem 1.2rem;
+        border-radius: 30px;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold-1);
+        margin-bottom: 2rem;
+        opacity: 0;
+        animation: fadeU 0.8s ease 0.3s forwards;
+      }
+      .bdot {
+        width: 6px;
+        height: 6px;
+        background: var(--gold-1);
+        border-radius: 50%;
+        animation: blink 1.5s ease-in-out infinite;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.2;
+        }
+      }
+      .hero-title {
+        font-size: clamp(2.8rem, 8vw, 6rem);
+        font-weight: 700;
+        line-height: 1.05;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        animation: fadeU 0.85s ease 0.5s forwards;
+      }
+      .hero-sub {
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        color: var(--text);
+        line-height: 1.85;
+        margin-bottom: 2.5rem;
+        font-weight: 300;
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0;
+        animation: fadeU 0.85s ease 0.7s forwards;
+      }
+      .hero-btns {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        opacity: 0;
+        animation: fadeU 0.85s ease 0.9s forwards;
+      }
+      .btn-pri {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.85rem 2rem;
+        background: var(--gold-grad);
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-family: "Raleway", sans-serif;
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--navy);
+        transition: var(--ease);
+        box-shadow: 0 6px 30px rgba(201, 168, 76, 0.4);
+      }
+      .btn-pri:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 40px rgba(201, 168, 76, 0.6);
+      }
+      .btn-sec {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.85rem 2rem;
+        background: transparent;
+        border: 1px solid rgba(201, 168, 76, 0.45);
+        border-radius: 50px;
+        font-family: "Raleway", sans-serif;
+        font-size: 0.88rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--gold-1);
+        transition: var(--ease);
+        backdrop-filter: blur(8px);
+      }
+      .btn-sec:hover {
+        background: rgba(201, 168, 76, 0.1);
+        border-color: var(--gold-1);
+        transform: translateY(-3px);
+      }
+      .hero-sc {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        z-index: 3;
+        opacity: 0.55;
+      }
+      .sc-line {
+        width: 1px;
+        height: 50px;
+        background: linear-gradient(to bottom, transparent, var(--gold-2));
+        animation: scL 2s ease-in-out infinite;
+      }
+      @keyframes scL {
+        0%,
+        100% {
+          opacity: 0;
+          transform: scaleY(0);
+        }
+        50% {
+          opacity: 1;
+          transform: scaleY(1);
+        }
+      }
+      .hero-sc span {
+        font-size: 0.62rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold-2);
+      }
+      @keyframes fadeU {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ===== VERSE ===== */
+      .verse-sec {
+        background: linear-gradient(
+          135deg,
+          #0d2040 0%,
+          #0a1628 50%,
+          #0d2040 100%
+        );
+        border-top: 1px solid rgba(201, 168, 76, 0.18);
+        border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+        padding: 2.5rem 2rem;
+        position: relative;
+        z-index: 5;
+      }
+      .verse-sec::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at center,
+          rgba(201, 168, 76, 0.05),
+          transparent 70%
+        );
+      }
+      .verse-in {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        position: relative;
+        z-index: 1;
+      }
+      .verse-ico {
+        font-size: 2rem;
+        color: var(--gold-2);
+        flex-shrink: 0;
+      }
+      .verse-in blockquote {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.65;
+      }
+      .verse-in cite {
+        font-size: 0.8rem;
+        color: var(--gold-2);
+        font-style: normal;
+        letter-spacing: 1px;
+        display: block;
+        margin-top: 0.35rem;
+      }
+      .verse-cross {
+        font-size: 2.5rem;
+        color: rgba(201, 168, 76, 0.28);
+        flex-shrink: 0;
+      }
+
+      /* ===== REVEAL ===== */
+      .reveal {
+        opacity: 0;
+        transform: translateY(36px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ===== ABOUT ===== */
+      #sobre {
+        background: var(--black);
+      }
+      .about-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: start;
+      }
+      .about-block {
+        display: flex;
+        gap: 1.2rem;
+        padding: 1.4rem;
+        margin-bottom: 0.85rem;
+        background: var(--glass);
+        border: 1px solid var(--glass-border);
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+        transition: var(--ease);
+      }
+      .about-block:hover {
+        background: rgba(201, 168, 76, 0.055);
+        border-color: rgba(201, 168, 76, 0.4);
+        transform: translateX(6px);
+        box-shadow: var(--shadow-gold);
+      }
+      .ab-ico {
+        flex-shrink: 0;
+        width: 46px;
+        height: 46px;
+        background: rgba(201, 168, 76, 0.1);
+        border: 1px solid rgba(201, 168, 76, 0.25);
+        border-radius: 11px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        color: var(--gold-2);
+      }
+      .about-block h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.25rem;
+        color: var(--gold-1);
+        margin-bottom: 0.4rem;
+      }
+      .about-block p {
+        font-size: 0.88rem;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+      .about-vid {
+        position: sticky;
+        top: 120px;
+      }
+      .vf-deco {
+        position: absolute;
+        inset: -12px -12px 12px 12px;
+        border: 1px solid rgba(201, 168, 76, 0.22);
+        border-radius: 20px;
+        z-index: 0;
+      }
+      .video-wrap {
+        position: relative;
+      }
+      .vid-embed {
+        position: relative;
+        z-index: 1;
+        border-radius: 16px;
+        overflow: hidden;
+        aspect-ratio: 16/9;
+        box-shadow:
+          0 30px 80px rgba(0, 0, 0, 0.6),
+          0 0 0 1px rgba(201, 168, 76, 0.18);
+      }
+      .vid-embed iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+      .vid-cap {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        margin-top: 1.4rem;
+        padding: 1rem 1.4rem;
+        background: rgba(201, 168, 76, 0.05);
+        border: 1px solid rgba(201, 168, 76, 0.18);
+        border-radius: 12px;
+        font-size: 0.83rem;
+        color: var(--muted);
+      }
+      .vid-cap i {
+        color: var(--gold-2);
+        font-size: 1.2rem;
+      }
+
+      /* ===== AGENDA ===== */
+      #agenda {
+        background: linear-gradient(180deg, #0d1e38 0%, #0a1628 100%);
+      }
+      .agenda-grid {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.2rem;
+      }
+      .ag-card {
+        display: flex;
+        gap: 1.2rem;
+        align-items: center;
+        padding: 1.4rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(201, 168, 76, 0.14);
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+        transition: var(--ease);
+      }
+      .ag-card:hover {
+        background: rgba(201, 168, 76, 0.06);
+        border-color: rgba(201, 168, 76, 0.38);
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-gold);
+      }
+      .ag-day {
+        flex-shrink: 0;
+        width: 54px;
+        height: 54px;
+        background: var(--gold-grad);
+        border-radius: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 0.88rem;
+        letter-spacing: 1px;
+        color: var(--navy);
+      }
+      .ag-info h4 {
+        font-size: 0.98rem;
+        color: #fff;
+        margin-bottom: 0.28rem;
+        font-family: "Raleway", sans-serif;
+      }
+      .ag-info p {
+        font-size: 0.8rem;
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin-bottom: 0.45rem;
+      }
+      .tag {
+        display: inline-block;
+        padding: 0.2rem 0.7rem;
+        border-radius: 20px;
+        font-size: 0.67rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .t-culto {
+        background: rgba(10, 22, 40, 0.8);
+        color: var(--gold-2);
+        border: 1px solid var(--gold-2);
+      }
+      .t-esp {
+        background: rgba(40, 10, 10, 0.8);
+        color: #f06060;
+        border: 1px solid #f06060;
+      }
+      .t-ebd {
+        background: rgba(20, 40, 20, 0.8);
+        color: #60d080;
+        border: 1px solid #60d080;
+      }
+
+      /* ===== MEDIA ===== */
+      #midias {
+        background: var(--black);
+      }
+      .media-grid {
+        max-width: 900px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 1.5rem;
+      }
+      .mc {
+        position: relative;
+        overflow: hidden;
+        padding: 2.5rem 2rem;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        text-align: center;
+        transition: var(--ease);
+        display: block;
+      }
+      .mc-bg {
+        position: absolute;
+        inset: 0;
+        opacity: 0.08;
+        transition: var(--ease);
+        border-radius: 20px;
+      }
+      .mc:hover .mc-bg {
+        opacity: 0.2;
+      }
+      .mc:hover {
+        transform: translateY(-8px);
+        border-color: rgba(255, 255, 255, 0.18);
+      }
+      .mc.ig .mc-bg {
+        background: radial-gradient(
+          at 40% 40%,
+          #f09433,
+          #e6683c,
+          #dc2743,
+          #cc2366,
+          #bc1888
+        );
+      }
+      .mc.wa .mc-bg {
+        background: #25d366;
+      }
+      .mc-ico {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 1;
+        transition: var(--ease);
+        display: block;
+      }
+      .mc:hover .mc-ico {
+        transform: scale(1.15);
+      }
+      .mc.ig .mc-ico {
+        color: #e6683c;
+      }
+      .mc.wa .mc-ico {
+        color: #25d366;
+      }
+      .mc h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.4rem;
+        color: #fff;
+        margin-bottom: 0.5rem;
+        position: relative;
+        z-index: 1;
+      }
+      .mc p {
+        font-size: 0.82rem;
+        color: var(--muted);
+        line-height: 1.6;
+        margin-bottom: 1.2rem;
+        position: relative;
+        z-index: 1;
+      }
+      .mc-btn {
+        display: inline-block;
+        padding: 0.5rem 1.2rem;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 25px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: rgba(255, 255, 255, 0.75);
+        position: relative;
+        z-index: 1;
+        transition: var(--ease);
+      }
+      .mc-btn:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.55);
+      }
+
+      /* ===== GALLERY ===== */
+      #galeria {
+        background: linear-gradient(180deg, #0d1e38 0%, #080e1a 100%);
+      }
+      .gal-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+      .gi {
+        border-radius: 16px;
+        overflow: hidden;
+        aspect-ratio: 4/3;
+        position: relative;
+        cursor: pointer;
+        border: 1px solid rgba(201, 168, 76, 0.1);
+        transition: var(--ease);
+      }
+      .gi.lg {
+        grid-column: span 2;
+      }
+      .gi:hover {
+        border-color: rgba(201, 168, 76, 0.5);
+        transform: scale(1.02);
+        z-index: 2;
+      }
+      .gi-ph {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.8rem;
+        color: rgba(201, 168, 76, 0.2);
+      }
+      .gi-ov {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.8),
+          transparent 60%
+        );
+        display: flex;
+        align-items: flex-end;
+        padding: 1.4rem;
+        opacity: 0;
+        transition: var(--ease);
+      }
+      .gi:hover .gi-ov {
+        opacity: 1;
+      }
+      .gi-ov span {
+        font-size: 0.82rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: var(--gold-1);
+      }
+
+      /* ===== TESTIMONIALS ===== */
+      #depoimentos {
+        background: var(--black);
+        overflow: hidden;
+      }
+      .test-track {
+        position: relative;
+        overflow: hidden;
+        max-width: 100%;
+      }
+      .test-inner {
+        display: flex;
+        gap: 1.5rem;
+        width: max-content;
+        transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+      .test-card {
+        width: 380px;
+        flex-shrink: 0;
+        padding: 2.4rem 2rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(201, 168, 76, 0.14);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        transition: var(--ease);
+      }
+      .test-card:hover {
+        background: rgba(201, 168, 76, 0.055);
+        border-color: rgba(201, 168, 76, 0.38);
+      }
+      .t-stars {
+        color: var(--gold-2);
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+        letter-spacing: 2px;
+      }
+      .test-card p {
+        font-size: 0.93rem;
+        color: var(--text);
+        line-height: 1.85;
+        font-style: italic;
+        margin-bottom: 1.4rem;
+      }
+      .t-auth {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+      }
+      .t-av {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--gold-grad);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.78rem;
+        font-weight: 800;
+        color: var(--navy);
+        flex-shrink: 0;
+      }
+      .t-auth strong {
+        display: block;
+        color: #fff;
+        font-size: 0.88rem;
+      }
+      .t-auth span {
+        font-size: 0.73rem;
+        color: var(--muted);
+      }
+      .test-dots {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+      .tdot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.18);
+        cursor: pointer;
+        transition: var(--ease);
+      }
+      .tdot.act {
+        background: var(--gold-2);
+        width: 24px;
+        border-radius: 4px;
+      }
+
+      /* ===== PRAYER ===== */
+      #oracao {
+        background: linear-gradient(
+          135deg,
+          #0d2040 0%,
+          #0a1628 50%,
+          #0d2040 100%
+        );
+      }
+      .pr-in {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+      }
+      .pr-ico {
+        font-size: 3rem;
+        color: var(--gold-2);
+        margin-bottom: 1rem;
+      }
+      .pr-in h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 1rem;
+      }
+      .pr-in > div > p {
+        color: var(--muted);
+        line-height: 1.85;
+        margin-bottom: 1.4rem;
+      }
+      .pr-in blockquote {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-size: 1.05rem;
+        color: var(--gold-1);
+        border-left: 2px solid var(--gold-2);
+        padding-left: 1rem;
+      }
+
+      /* ===== FORMS ===== */
+      .fg {
+        margin-bottom: 1.15rem;
+      }
+      .fg label {
+        display: block;
+        margin-bottom: 0.45rem;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .fg input,
+      .fg textarea,
+      .fg select {
+        width: 100%;
+        padding: 0.82rem 1.1rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(201, 168, 76, 0.2);
+        border-radius: 10px;
+        color: #fff;
+        font-family: "Raleway", sans-serif;
+        font-size: 0.88rem;
+        transition: var(--ease);
+        outline: none;
+      }
+      .fg input:focus,
+      .fg textarea:focus,
+      .fg select:focus {
+        border-color: var(--gold-2);
+        background: rgba(201, 168, 76, 0.055);
+        box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.12);
+      }
+      .fg input::placeholder,
+      .fg textarea::placeholder {
+        color: rgba(255, 255, 255, 0.22);
+      }
+      .fg select option {
+        background: var(--navy);
+        color: #fff;
+      }
+      .fg textarea {
+        resize: vertical;
+        min-height: 110px;
+      }
+      .frow {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .fcheck {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 1.15rem;
+      }
+      .fcheck input {
+        width: auto;
+        accent-color: var(--gold-2);
+      }
+      .fcheck label {
+        font-size: 0.8rem;
+        color: var(--muted);
+        text-transform: none;
+        letter-spacing: 0;
+        cursor: pointer;
+      }
+      .ipass {
+        position: relative;
+      }
+      .ipass input {
+        padding-right: 3rem;
+      }
+      .ipass button {
+        position: absolute;
+        right: 0.85rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        color: var(--muted);
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 0.9rem;
+      }
+      .ipass button:hover {
+        color: var(--gold-1);
+      }
+      .btn-full {
+        width: 100%;
+        justify-content: center;
+      }
+
+      /* ===== CONTACT ===== */
+      #contato {
+        background: var(--black);
+      }
+      .ct-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        gap: 4rem;
+        align-items: start;
+      }
+      .ct-card {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        padding: 1.15rem;
+        margin-bottom: 0.9rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(201, 168, 76, 0.14);
+        border-radius: 14px;
+        transition: var(--ease);
+      }
+      .ct-card:hover {
+        border-color: rgba(201, 168, 76, 0.38);
+        background: rgba(201, 168, 76, 0.048);
+      }
+      .ct-ico {
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+        background: rgba(201, 168, 76, 0.1);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.05rem;
+        color: var(--gold-2);
+      }
+      .ct-card h4 {
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--gold-1);
+        margin-bottom: 0.28rem;
+        font-family: "Raleway", sans-serif;
+      }
+      .ct-card p {
+        font-size: 0.84rem;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      .map-ph {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 90px;
+        padding: 0px;
+        border-radius: 14px;
+        border: 2px dashed rgba(201, 168, 76, 0.22);
+        background: rgba(201, 168, 76, 0.025);
+        color: var(--muted);
+        margin-top: 0px;
+      }
+      .map-ph i {
+        font-size: 2.4rem;
+        color: rgba(201, 168, 76, 0.28);
+        margin-bottom: 0.7rem;
+      }
+      .map-ph p {
+        font-size: 0.88rem;
+      }
+      .map-ph small {
+        font-size: 0.73rem;
+        color: rgba(255, 255, 255, 0.18);
+        margin-top: 0.3rem;
+      }
+      .ct-form {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(201, 168, 76, 0.14);
+        border-radius: 20px;
+        padding: 2.4rem;
+        backdrop-filter: blur(10px);
+      }
+      .ct-form h3 {
+        font-size: 1.6rem;
+        color: var(--gold-1);
+        margin-bottom: 1.4rem;
+        font-family: "Cormorant Garamond", serif;
+      }
+
+      /* ===== ADMIN SECTIONS (Secretaria / Tesouraria) ===== */
+      .adm-sec {
+        background: linear-gradient(180deg, #060c18 0%, #0a1628 100%);
+      }
+      .adm-sec.tes {
+        background: linear-gradient(180deg, #0a1628 0%, #060c18 100%);
+      }
+
+      /* Login Card */
+      .login-wrap {
+        display: flex;
+        justify-content: center;
+      }
+      .login-card {
+        width: 100%;
+        max-width: 460px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(201, 168, 76, 0.22);
+        border-radius: 24px;
+        padding: 3rem;
+        backdrop-filter: blur(20px);
+        box-shadow:
+          0 30px 80px rgba(0, 0, 0, 0.5),
+          var(--shadow-gold);
+      }
+      .login-logo {
+        text-align: center;
+        margin-bottom: 2.4rem;
+      }
+      .login-logo .lic {
+        width: 62px;
+        height: 62px;
+        background: var(--gold-grad);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.7rem;
+        color: var(--navy);
+        margin: 0 auto 0.85rem;
+      }
+      .login-logo h3 {
+        font-size: 1.6rem;
+        color: var(--gold-1);
+        margin-bottom: 0.4rem;
+      }
+      .login-logo p {
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+      .login-hint {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 0.73rem;
+        color: rgba(255, 255, 255, 0.22);
+      }
+
+      /* ===== DASHBOARD SHELL ===== */
+      .dash-wrap {
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+      .dash-hdr {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.4rem 1.8rem;
+        margin-bottom: 2rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(201, 168, 76, 0.18);
+        border-radius: 16px;
+        flex-wrap: wrap;
+      }
+      .dash-hdr h3 {
+        flex: 1;
+        font-size: 1.3rem;
+        color: var(--gold-1);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        min-width: 200px;
+      }
+      .dash-hdr h3 i {
+        color: var(--gold-2);
+      }
+      .btn-out {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1.15rem;
+        background: rgba(220, 50, 50, 0.12);
+        border: 1px solid rgba(220, 50, 50, 0.28);
+        border-radius: 8px;
+        color: #f08080;
+        font-size: 0.78rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--ease);
+      }
+      .btn-out:hover {
+        background: rgba(220, 50, 50, 0.22);
+      }
+
+      /* Tabs */
+      .tabs {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+      }
+      .tab {
+        padding: 0.55rem 1.25rem;
+        border-radius: 30px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--muted);
+        transition: var(--ease);
+      }
+      .tab.act {
+        background: rgba(201, 168, 76, 0.14);
+        border-color: rgba(201, 168, 76, 0.4);
+        color: var(--gold-1);
+      }
+      .tab-pane {
+        display: none;
+      }
+      .tab-pane.act {
+        display: block;
+      }
+
+      /* Cards row */
+      .cards-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1.1rem;
+        margin-bottom: 2rem;
+      }
+      .kpi {
+        padding: 1.4rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(201, 168, 76, 0.13);
+        border-radius: 14px;
+        transition: var(--ease);
+      }
+      .kpi:hover {
+        border-color: rgba(201, 168, 76, 0.35);
+      }
+      .kpi i {
+        font-size: 1.5rem;
+        color: var(--gold-2);
+        margin-bottom: 0.65rem;
+        display: block;
+      }
+      .kpi .kv {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.85rem;
+        font-weight: 700;
+        background: var(--gold-grad);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1;
+      }
+      .kpi .kl {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 0.3rem;
+      }
+      .kpi.g {
+        border-color: rgba(76, 175, 130, 0.2);
+      }
+      .kpi.g i {
+        color: var(--green);
+      }
+      .kpi.g .kv {
+        background: linear-gradient(135deg, #4caf82, #60d090);
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+      .kpi.r {
+        border-color: rgba(240, 96, 96, 0.2);
+      }
+      .kpi.r i {
+        color: var(--red);
+      }
+      .kpi.r .kv {
+        background: linear-gradient(135deg, #f06060, #f09080);
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+      .kpi.b {
+        border-color: rgba(91, 155, 213, 0.2);
+      }
+      .kpi.b i {
+        color: var(--blue);
+      }
+      .kpi.b .kv {
+        background: linear-gradient(135deg, #5b9bd5, #80baff);
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+
+      /* Panel / Box */
+      .panel {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(201, 168, 76, 0.13);
+        border-radius: 14px;
+        margin-bottom: 1.4rem;
+        overflow: hidden;
+      }
+      .panel-hdr {
+        padding: 1rem 1.4rem;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .panel-hdr h4 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.1rem;
+        color: var(--gold-1);
+      }
+      .panel-body {
+        padding: 1.4rem;
+      }
+
+      /* Table */
+      .tbl-wrap {
+        overflow-x: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      thead {
+        background: rgba(201, 168, 76, 0.07);
+      }
+      th {
+        padding: 0.78rem 1.1rem;
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--gold-2);
+        text-align: left;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+        white-space: nowrap;
+      }
+      td {
+        padding: 0.78rem 1.1rem;
+        font-size: 0.84rem;
+        color: var(--text);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        vertical-align: middle;
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
+      tr:hover td {
+        background: rgba(201, 168, 76, 0.03);
+      }
+      .badge {
+        display: inline-block;
+        padding: 0.2rem 0.7rem;
+        border-radius: 20px;
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+      }
+      .b-green {
+        background: rgba(76, 175, 130, 0.12);
+        border: 1px solid rgba(76, 175, 130, 0.3);
+        color: var(--green);
+      }
+      .b-red {
+        background: rgba(240, 96, 96, 0.12);
+        border: 1px solid rgba(240, 96, 96, 0.3);
+        color: var(--red);
+      }
+      .b-gold {
+        background: rgba(201, 168, 76, 0.12);
+        border: 1px solid rgba(201, 168, 76, 0.3);
+        color: var(--gold-1);
+      }
+      .b-blue {
+        background: rgba(91, 155, 213, 0.12);
+        border: 1px solid rgba(91, 155, 213, 0.3);
+        color: var(--blue);
+      }
+      .b-purple {
+        background: rgba(176, 136, 240, 0.12);
+        border: 1px solid rgba(176, 136, 240, 0.3);
+        color: var(--purple);
+      }
+
+      /* Action buttons in table */
+      .tbl-actions {
+        display: flex;
+        gap: 0.4rem;
+      }
+      .btn-sm {
+        padding: 0.28rem 0.65rem;
+        border-radius: 6px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+        transition: 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+      .btn-e {
+        background: rgba(91, 155, 213, 0.18);
+        color: var(--blue);
+        border: 1px solid rgba(91, 155, 213, 0.3);
+      }
+      .btn-e:hover {
+        background: rgba(91, 155, 213, 0.32);
+      }
+      .btn-d {
+        background: rgba(240, 96, 96, 0.18);
+        color: var(--red);
+        border: 1px solid rgba(240, 96, 96, 0.3);
+      }
+      .btn-d:hover {
+        background: rgba(240, 96, 96, 0.32);
+      }
+      .btn-p {
+        background: rgba(76, 175, 130, 0.18);
+        color: var(--green);
+        border: 1px solid rgba(76, 175, 130, 0.3);
+      }
+      .btn-p:hover {
+        background: rgba(76, 175, 130, 0.32);
+      }
+
+      /* Form add panel */
+      .add-form {
+        display: none;
+      }
+      .add-form.open {
+        display: block;
+      }
+
+      /* Search bar */
+      .srch {
+        display: flex;
+        gap: 0.75rem;
+        margin-bottom: 1.2rem;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .srch input,
+      .srch select {
+        flex: 1;
+        min-width: 160px;
+        padding: 0.65rem 1rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(201, 168, 76, 0.2);
+        border-radius: 8px;
+        color: #fff;
+        font-family: "Raleway", sans-serif;
+        font-size: 0.84rem;
+        outline: none;
+        transition: var(--ease);
+      }
+      .srch input:focus,
+      .srch select:focus {
+        border-color: var(--gold-2);
+      }
+
+      /* Bar chart CSS */
+      .bar-chart {
+        display: flex;
+        gap: 0.75rem;
+        align-items: flex-end;
+        height: 160px;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .bg {
+        flex: 1;
+        display: flex;
+        gap: 3px;
+        align-items: flex-end;
+        position: relative;
+      }
+      .bg span {
+        position: absolute;
+        bottom: -1.6rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.68rem;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      .bi,
+      .bo {
+        flex: 1;
+        border-radius: 4px 4px 0 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 4px;
+        font-size: 0.55rem;
+        color: rgba(255, 255, 255, 0.65);
+        transition: height 0.8s ease;
+        min-height: 4px;
+      }
+      .bi {
+        background: linear-gradient(to top, #1a6a3a, #4caf82);
+      }
+      .bo {
+        background: linear-gradient(to top, #6a1a1a, #f06060);
+      }
+      .bar-leg {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2.8rem;
+        font-size: 0.73rem;
+      }
+      .li {
+        color: var(--green);
+      }
+      .lo {
+        color: var(--red);
+      }
+
+      /* Donut */
+      .donut-wrap {
+        position: relative;
+        width: 130px;
+        height: 130px;
+        margin: 0 auto 1rem;
+        flex-shrink: 0;
+      }
+      .donut-svg {
+        width: 100%;
+        height: 100%;
+      }
+      .donut-ctr {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .donut-ctr span {
+        font-size: 0.6rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .donut-ctr strong {
+        font-size: 0.9rem;
+        color: var(--gold-1);
+        font-family: "Cormorant Garamond", serif;
+      }
+      .donut-leg {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        margin-top: 1rem;
+      }
+      .donut-leg div {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.76rem;
+        color: var(--muted);
+      }
+      .donut-leg .ds {
+        width: 10px;
+        height: 10px;
+        border-radius: 2px;
+        flex-shrink: 0;
+      }
+
+      /* Chart row */
+      .chart-row {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1.4rem;
+        margin-bottom: 1.4rem;
+        align-items: start;
+      }
+      .chart-box {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(201, 168, 76, 0.12);
+        border-radius: 14px;
+        padding: 1.6rem;
+      }
+      .chart-box h4 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.08rem;
+        color: var(--gold-1);
+        margin-bottom: 1.4rem;
+      }
+
+      /* Presence grid */
+      .pres-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 0.8rem;
+      }
+      .pres-item {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        padding: 0.7rem 1rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 10px;
+        transition: var(--ease);
+        cursor: pointer;
+      }
+      .pres-item:hover {
+        border-color: rgba(201, 168, 76, 0.3);
+      }
+      .pres-item.checked {
+        background: rgba(76, 175, 130, 0.08);
+        border-color: rgba(76, 175, 130, 0.3);
+      }
+      .pres-cb {
+        width: 18px;
+        height: 18px;
+        border-radius: 4px;
+        border: 1px solid rgba(201, 168, 76, 0.35);
+        background: transparent;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: 0.2s;
+      }
+      .pres-item.checked .pres-cb {
+        background: var(--green);
+        border-color: var(--green);
+      }
+      .pres-item.checked .pres-cb::after {
+        content: "✓";
+        color: #fff;
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+      .pres-nm {
+        font-size: 0.84rem;
+        color: var(--text);
+      }
+      .pres-dep {
+        font-size: 0.68rem;
+        color: var(--muted);
+      }
+
+      /* Modal */
+      .modal {
+        position: fixed;
+        inset: 0;
+        z-index: 5000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+      }
+      .modal.open {
+        display: flex;
+      }
+      .modal-bg {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(6px);
+      }
+      .modal-box {
+        position: relative;
+        z-index: 1;
+        background: #0a1628;
+        border: 1px solid rgba(201, 168, 76, 0.25);
+        border-radius: 20px;
+        padding: 2.2rem;
+        width: 100%;
+        max-width: 560px;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+      .modal-box h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.4rem;
+        color: var(--gold-1);
+        margin-bottom: 1.4rem;
+      }
+      .modal-close {
+        position: absolute;
+        top: 1.2rem;
+        right: 1.2rem;
+        background: none;
+        border: none;
+        color: var(--muted);
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .modal-close:hover {
+        color: #fff;
+      }
+
+      /* ===== FOOTER ===== */
+      footer {
+        background: linear-gradient(180deg, #040810 0%, #020508 100%);
+        border-top: 1px solid rgba(201, 168, 76, 0.18);
+        position: relative;
+        z-index: 5;
+      }
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--gold-grad-h);
+      }
+      .ft-top {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1.4fr;
+        gap: 3rem;
+        padding: 5rem 2rem 3rem;
+      }
+      .ft-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--gold-1);
+        font-family: "Cormorant Garamond", serif;
+        margin-bottom: 1rem;
+      }
+      .ft-logo .li {
+        width: 36px;
+        height: 36px;
+        background: var(--gold-grad);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        color: var(--navy);
+        flex-shrink: 0;
+      }
+      .ft-desc {
+        font-size: 0.84rem;
+        color: var(--muted);
+        line-height: 1.85;
+        margin-bottom: 1.4rem;
+      }
+      .ft-soc {
+        display: flex;
+        gap: 0.6rem;
+      }
+      .ft-soc a {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid rgba(201, 168, 76, 0.22);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 0.98rem;
+        transition: var(--ease);
+      }
+      .ft-soc a:hover {
+        background: rgba(201, 168, 76, 0.1);
+        color: var(--gold-1);
+        border-color: var(--gold-2);
+        transform: translateY(-3px);
+      }
+      .ft-col h4 {
+        font-family: "Raleway", sans-serif;
+        font-size: 0.76rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--gold-2);
+        margin-bottom: 1.4rem;
+      }
+      .ft-links {
+        list-style: none;
+      }
+      .ft-links li {
+        margin-bottom: 0.6rem;
+      }
+      .ft-links a {
+        font-size: 0.84rem;
+        color: var(--muted);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        transition: var(--ease);
+      }
+      .ft-links a::before {
+        content: "›";
+        color: var(--gold-2);
+        opacity: 0;
+        transition: var(--ease);
+      }
+      .ft-links a:hover {
+        color: var(--gold-1);
+      }
+      .ft-links a:hover::before {
+        opacity: 1;
+      }
+      .ft-ct p {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.84rem;
+        color: var(--muted);
+        margin-bottom: 0.65rem;
+      }
+      .ft-ct i {
+        color: var(--gold-2);
+        width: 16px;
+        text-align: center;
+      }
+      .ft-bot {
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+        padding: 2rem;
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+      .ft-verse {
+        text-align: center;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 0.93rem;
+        font-style: italic;
+        color: rgba(201, 168, 76, 0.45);
+        margin-bottom: 1.4rem;
+        padding-bottom: 1.4rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      .ft-copy {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        font-size: 0.76rem;
+        color: rgba(255, 255, 255, 0.22);
+      }
+      .ft-copy i {
+        animation: hb 1.4s ease-in-out infinite;
+      }
+      @keyframes hb {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.3);
+        }
+      }
+
+      /* Floating */
+      .fl-wa {
+        position: fixed;
+        bottom: 2rem;
+        left: 2rem;
+        z-index: 900;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #25d366, #128c7e);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem;
+        color: #fff;
+        box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+        transition: var(--ease);
+        animation: pWA 2.5s ease-in-out infinite;
+      }
+      @keyframes pWA {
+        0%,
+        100% {
+          box-shadow: 0 6px 30px rgba(37, 211, 102, 0.4);
+        }
+        50% {
+          box-shadow:
+            0 6px 40px rgba(37, 211, 102, 0.7),
+            0 0 0 10px rgba(37, 211, 102, 0.08);
+        }
+      }
+      .fl-wa:hover {
+        transform: scale(1.12);
+      }
+      .fl-wa-tip {
+        position: absolute;
+        left: calc(100% + 12px);
+        background: rgba(10, 22, 40, 0.96);
+        color: #fff;
+        font-size: 0.76rem;
+        font-weight: 600;
+        white-space: nowrap;
+        padding: 0.4rem 0.9rem;
+        border-radius: 8px;
+        opacity: 0;
+        transform: translateX(-5px);
+        transition: var(--ease);
+        pointer-events: none;
+        border: 1px solid rgba(37, 211, 102, 0.28);
+      }
+      .fl-wa:hover .fl-wa-tip {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      #btt {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 900;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: rgba(10, 22, 40, 0.9);
+        border: 1px solid rgba(201, 168, 76, 0.38);
+        color: var(--gold-1);
+        font-size: 1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: var(--ease);
+        backdrop-filter: blur(10px);
+      }
+      #btt.vis {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      #btt:hover {
+        background: rgba(201, 168, 76, 0.14);
+        box-shadow: var(--shadow-gold);
+      }
+
+      /* Toast */
+      .toast {
+        position: fixed;
+        bottom: 5rem;
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
+        background: rgba(10, 22, 40, 0.97);
+        border: 1px solid rgba(201, 168, 76, 0.38);
+        color: var(--gold-1);
+        padding: 0.85rem 2rem;
+        border-radius: 50px;
+        font-size: 0.84rem;
+        font-weight: 600;
+        z-index: 9999;
+        opacity: 0;
+        transition: var(--ease);
+        backdrop-filter: blur(16px);
+        pointer-events: none;
+        white-space: nowrap;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 1100px) {
+        .about-container,
+        .ct-grid,
+        .pr-in {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .about-vid {
+          position: static;
+        }
+        .chart-row {
+          grid-template-columns: 1fr;
+        }
+        .ft-top {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 900px) {
+        #nav,
+        .btn-vis {
+          display: none;
+        }
+        .ham {
+          display: flex;
+        }
+        .gal-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .gi.lg {
+          grid-column: span 2;
+        }
+      }
+      @media (max-width: 640px) {
+        section {
+          padding: 5rem 1.25rem;
+        }
+        .ft-top {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          padding: 3rem 1.5rem 2rem;
+        }
+        .gal-grid {
+          grid-template-columns: 1fr;
+        }
+        .gi.lg {
+          grid-column: span 1;
+        }
+        .frow,
+        .cards-row {
+          grid-template-columns: 1fr;
+        }
+        .chart-row {
+          grid-template-columns: 1fr;
+        }
+        .test-card {
+          width: 300px;
+        }
+        .ft-copy {
+          flex-direction: column;
+          text-align: center;
+        }
+        .bar-chart {
+          height: 120px;
+        }
+        .tabs {
+          gap: 0.35rem;
+        }
+        .tab {
+          padding: 0.45rem 0.9rem;
+          font-size: 0.72rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- PARTICLES -->
+    <div id="ptc"></div>
+
+    <!-- HEADER -->
+    <header id="hdr">
+      <div class="hdr-in">
+        <a href="#inicio" class="logo-area">
+          <div class="logo-icon">✝</div>
+          <div>
+            <span class="logo-main">IEADIP</span>
+            <span class="logo-sub">Guimarânia</span>
+          </div>
+        </a>
+        <nav id="nav">
+          <ul>
+            <li><a href="#inicio" class="nl act">Início</a></li>
+            <li><a href="#sobre" class="nl">Sobre Nós</a></li>
+            <li><a href="#agenda" class="nl">Agenda</a></li>
+            <li><a href="#contato" class="nl">Contato</a></li>
+            <li><a href="#midias" class="nl">Mídias</a></li>
+            <li><a href="#secretaria" class="nl">Secretaria</a></li>
+            <li><a href="#tesouraria" class="nl">Tesouraria</a></li>
+          </ul>
+        </nav>
+        <a href="#contato" class="btn-vis"
+          ><span>Venha Nos Visitar</span><i class="fas fa-map-marker-alt"></i
+        ></a>
+        <button class="ham" id="ham" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mob-menu" id="mobMenu">
+      <a href="#inicio" class="mobl">Início</a>
+      <a href="#sobre" class="mobl">Sobre Nós</a>
+      <a href="#agenda" class="mobl">Agenda</a>
+      <a href="#contato" class="mobl">Contato</a>
+      <a href="#secretaria" class="mobl">Secretaria</a>
+      <a href="#tesouraria" class="mobl">Tesouraria</a>
+      <a href="#midias" class="mobl">Mídias</a>
+      <a href="#contato" class="mobl cta">Venha Nos Visitar</a>
+    </div>
+
+    <!-- HERO -->
+    <section id="inicio" style="padding: 0">
+      <div class="hero-bg"></div>
+      <div class="hero-ov"></div>
+      <div class="hero-cnt">
+        <div class="hero-badge">
+          <div class="bdot"></div>
+          <span>Bem-vindo à nossa família de fé</span>
+        </div>
+        <h1 class="hero-title">
+          Bem-vindo à<br /><span class="gold-text">IEADIP</span
+          ><span style="color: rgba(255, 255, 255, 0.9)"> Guimarânia</span>
+        </h1>
+        <p class="hero-sub">
+          Um lugar de fé genuína, comunhão verdadeira e esperança inabalável.<br />Aqui,
+          a presença de Deus transforma vidas e corações.
+        </p>
+        <div class="hero-btns">
+          <a href="#sobre" class="btn-pri"
+            ><span>Conheça Nossa História</span
+            ><i class="fas fa-arrow-right"></i
+          ></a>
+          <a href="#contato" class="btn-sec"
+            ><span>Fale Conosco</span><i class="fas fa-comment-dots"></i
+          ></a>
+        </div>
+      </div>
+      <div class="hero-sc">
+        <div class="sc-line"></div>
+        <span>Rolar</span>
+      </div>
+    </section>
+
+    <!-- VERSE -->
+    <div class="verse-sec">
+      <div class="verse-in">
+        <div class="verse-ico"><i class="fas fa-bible"></i></div>
+        <div>
+          <blockquote id="vTxt">
+            "Porque Deus amou o mundo de tal maneira que deu o seu Filho
+            unigênito, para que todo o que nele crê não pereça, mas tenha a vida
+            eterna."
+          </blockquote>
+          <cite id="vRef">— João 3:16</cite>
+        </div>
+        <div class="verse-cross">✝</div>
+      </div>
+    </div>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+      <div class="section-header reveal">
+        <span class="section-tag">Conheça-nos</span>
+        <h2 class="section-title">
+          A Nossa <span class="gold-text">História</span>
+        </h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-container">
+        <div class="reveal">
+          <div class="about-block">
+            <div class="ab-ico"><i class="fas fa-church"></i></div>
+            <div>
+              <h3>Nossa História</h3>
+              <p>
+                A história da nossa igreja começa no fim da Segunda Guerra
+                Mundial, após a mais difícil batalha da Força Expedicionária
+                Brasileira em terras italianas que culminou na conquista de
+                Montese em 19 de Abril de 1945. Entre os soldados brasileiros se
+                encontrava Francisco de Paula Moura Neto, filho do casal José
+                Teodoro dos Santos e Floripes Maria de Jesus, que foi morto
+                naquela histórica batalha. Dona Floripes, até então católica,
+                aceitou a Jesus durante um culto evangélico em Arapuá-MG, e seu
+                filho Osmar dos Santos Moura foi batizado pelo Espírito Santo.
+                Ela então disse: "Assim como perdi um filho para a guerra dos
+                homens, entrego meu filho Osmar para batalhar na obra do
+                Senhor."
+              </p>
+            </div>
+          </div>
+          <div class="about-block">
+            <div class="ab-ico"><i class="fas fa-route"></i></div>
+            <div>
+              <h3>A Saga do Pastor Osmar</h3>
+              <p>
+                O jovem Osmar dos Santos Moura foi consagrado cooperador e
+                visitou novos convertidos em Grupiara-MG. Em 1947, já como
+                presbítero, chegou a Patrocínio-MG e iniciou um glorioso legado.
+                Percorreu quilômetros a pé, a cavalo, de carona e de bicicleta
+                para levar a Palavra. Guiado pelo Espírito Santo, foi abrindo
+                campo em Monte Carmelo, Uberaba, Patos de Minas, Unaí e dezenas
+                de outras cidades — formando um verdadeiro exército do Senhor
+                para a sua glória.
+              </p>
+            </div>
+          </div>
+          <div class="about-block">
+            <div class="ab-ico"><i class="fas fa-building"></i></div>
+            <div>
+              <h3>Nossa Catedral</h3>
+              <p>
+                O crescimento foi tão significativo que em 1988 o Pr. Osmar
+                sentiu o desejo de construir um templo maior. O Lançamento da
+                Pedra Fundamental da Catedral foi em 28 de agosto de 2005 e ela
+                foi inaugurada em 07 de Julho de 2018, em um culto de celebração
+                que iniciou às 18h — um marco inesquecível na história desta
+                comunidade.
+              </p>
+            </div>
+          </div>
+          <div class="about-block">
+            <div class="ab-ico"><i class="fas fa-hands-praying"></i></div>
+            <div>
+              <h3>Nossa Missão Hoje</h3>
+              <p>
+                Somos chamados a proclamar o Evangelho de Jesus Cristo com poder
+                e amor, discipular crentes comprometidos, promover a adoração
+                genuína e ser instrumentos de transformação. Nossa missão é
+                alcançar cada família, cada coração e cada geração com a
+                mensagem redentora de Cristo.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="about-vid reveal">
+          <div class="video-wrap">
+            <div class="vf-deco"></div>
+            <div class="vid-embed">
+              <iframe
+                src="https://www.youtube.com/embed/AJwXNycgpJA"
+                title="IEADIP Guimarânia"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                "
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div class="vid-cap">
+            <i class="fas fa-play-circle"></i
+            ><span>Assista e conheça mais sobre a nossa comunidade</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AGENDA -->
+    <section id="agenda">
+      <div class="section-header reveal">
+        <span class="section-tag">Programação</span>
+        <h2 class="section-title">
+          Agenda da <span class="gold-text">Igreja</span>
+        </h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="agenda-grid reveal">
+        <div class="ag-card">
+          <div class="ag-day">Ter</div>
+          <div class="ag-info">
+            <h4>Culto de Ensino e Oração</h4>
+            <p><i class="fas fa-clock"></i> 19:00 – 21:00</p>
+            <span class="tag t-culto">Ensino e Oração</span>
+          </div>
+        </div>
+        <div class="ag-card">
+          <div class="ag-day">Qui</div>
+          <div class="ag-info">
+            <h4>Culto de Louvor</h4>
+            <p><i class="fas fa-clock"></i> 19:00 – 21:00</p>
+            <span class="tag t-culto">Louvor</span>
+          </div>
+        </div>
+        <div class="ag-card">
+          <div class="ag-day">Dom</div>
+          <div class="ag-info">
+            <h4>Escola Bíblica Dominical</h4>
+            <p><i class="fas fa-clock"></i> 08:30 – 10:00</p>
+            <span class="tag t-ebd">EBD</span>
+          </div>
+        </div>
+        <div class="ag-card">
+          <div class="ag-day">Dom</div>
+          <div class="ag-info">
+            <h4>Culto de Celebração</h4>
+            <p><i class="fas fa-clock"></i> 19:00 – 21:00</p>
+            <span class="tag t-esp">Especial</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÍDIAS -->
+    <section id="midias">
+      <div class="section-header reveal">
+        <span class="section-tag">Conecte-se</span>
+        <h2 class="section-title">
+          Nossas <span class="gold-text">Mídias</span>
+        </h2>
+        <div class="section-line"></div>
+        <p class="section-desc" style="margin-top: 1.2rem">
+          Siga-nos e fique por dentro de tudo que acontece na IEADIP Guimarânia.
+        </p>
+      </div>
+      <div class="media-grid reveal">
+        <a
+          href="https://www.instagram.com/ieadip.guimarania"
+          target="_blank"
+          class="mc ig"
+        >
+          <div class="mc-bg"></div>
+          <i class="fab fa-instagram mc-ico"></i>
+          <h3>Instagram</h3>
+          <p>Momentos de louvor, mensagens e a vida da nossa comunidade.</p>
+          <span class="mc-btn">@ieadip.guimarania</span>
+        </a>
+        <a href="https://wa.me/+5534998111439" target="_blank" class="mc wa">
+          <div class="mc-bg"></div>
+          <i class="fab fa-whatsapp mc-ico"></i>
+          <h3>WhatsApp</h3>
+          <p>
+            Fale diretamente com nossa equipe pastoral. Estamos aqui para você.
+          </p>
+          <span class="mc-btn">Enviar Mensagem</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section id="galeria">
+      <div class="section-header reveal">
+        <span class="section-tag">Momentos</span>
+        <h2 class="section-title">
+          Galeria de <span class="gold-text">Fotos</span>
+        </h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="gal-grid reveal">
+        <div
+          class="gi lg"
+          style="background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 100%)"
+        >
+          <div class="gi-ph"><i class="fas fa-church"></i></div>
+          <div class="gi-ov"><span>Culto de Missões</span></div>
+        </div>
+        <div
+          class="gi"
+          style="background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)"
+        >
+          <div class="gi-ph"><i class="fas fa-music"></i></div>
+          <div class="gi-ov"><span>Louvor & Adoração</span></div>
+        </div>
+        <div
+          class="gi"
+          style="background: linear-gradient(135deg, #0d2137 0%, #1a3a5c 100%)"
+        >
+          <div class="gi-ph"><i class="fas fa-users"></i></div>
+          <div class="gi-ov"><span>Culto de Jovens</span></div>
+        </div>
+        <div
+          class="gi"
+          style="background: linear-gradient(135deg, #1a1010 0%, #2a1a1a 100%)"
+        >
+          <div class="gi-ph"><i class="fas fa-bread-slice"></i></div>
+          <div class="gi-ov"><span>Santa Ceia</span></div>
+        </div>
+        <div
+          class="gi lg"
+          style="background: linear-gradient(135deg, #0a2818 0%, #1a4a2a 100%)"
+        >
+          <div class="gi-ph"><i class="fas fa-book-open"></i></div>
+          <div class="gi-ov"><span>Escola Bíblica Dominical</span></div>
+        </div>
+        <div
+          class="gi"
+          style="background: linear-gradient(135deg, #1a1628 0%, #2a2040 100%)"
+        >
+          <div class="gi-ph"><i class="fas fa-water"></i></div>
+          <div class="gi-ov"><span>Batismos</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORAÇÃO -->
+    <section id="oracao">
+      <div class="pr-in reveal">
+        <div>
+          <div class="pr-ico"><i class="fas fa-hands-praying"></i></div>
+          <h2>Pedidos de <span class="gold-text">Oração</span></h2>
+          <p>
+            Acreditamos no poder da oração. Compartilhe seu pedido e nossa
+            equipe pastoral intercederá por você com fé e amor.
+          </p>
+          <blockquote>
+            "Pedi e dar-se-vos-á; buscai e achareis; batei e abrir-se-vos-á." —
+            Mateus 7:7
+          </blockquote>
+        </div>
+        <div>
+          <form onsubmit="submitPray(event)">
+            <div class="fg">
+              <label>Seu Nome</label
+              ><input
+                type="text"
+                placeholder="Como posso te chamar?"
+                required
+              />
+            </div>
+            <div class="fg">
+              <label>Seu Pedido</label
+              ><textarea
+                placeholder="Compartilhe seu pedido de oração..."
+                rows="4"
+                required
+              ></textarea>
+            </div>
+            <div class="fcheck">
+              <input type="checkbox" id="priv" /><label for="priv"
+                >Manter em sigilo (apenas para a equipe pastoral)</label
+              >
+            </div>
+            <button type="submit" class="btn-pri btn-full">
+              <span>Enviar Pedido de Oração</span
+              ><i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+      <div class="section-header reveal">
+        <span class="section-tag">Fale Conosco</span>
+        <h2 class="section-title">
+          Entre em <span class="gold-text">Contato</span>
+        </h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="ct-grid reveal">
+        <div>
+          <div class="ct-card">
+            <div class="ct-ico"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h4>Endereço</h4>
+              <p>Rua Guaicurus, 320<br />Guimarânia – MG</p>
+            </div>
+          </div>
+          <div class="ct-card">
+            <div class="ct-ico"><i class="fas fa-phone"></i></div>
+            <div>
+              <h4>Telefone</h4>
+              <p>(34) 99811-1439</p>
+            </div>
+          </div>
+          <div class="ct-card">
+            <div class="ct-ico"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <h4>WhatsApp Pastoral</h4>
+              <p>(34) 99811-1439</p>
+            </div>
+          </div>
+          <div class="ct-card">
+            <div class="ct-ico"><i class="fas fa-clock"></i></div>
+            <div>
+              <h4>Horários de Culto</h4>
+              <p>
+                Dom: 8h30 (EBD) | 19h00 (Culto)<br />Ter: 19h00 | Qui: 19h00
+              </p>
+            </div>
+          </div>
+          <div class="map-ph">
+            <i class="fas fa-map-marked-alt"></i>
+            <p>Mapa de Localização</p>
+            <small><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d791.7787605182351!2d-46.7993937034292!3d-18.84665151661499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ae534a4c501eb9%3A0x2bee6187d303db32!2sIgreja%20Assembleia%20de%20Deus%20-%20Madureira!5e1!3m2!1spt-BR!2sbr!4v1778559360961!5m2!1spt-BR!2sbr" width="600" height="150" style="border:0; padding: 0px;margin: 0px; display: block" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></small>
+          </div>
+        </div>
+        <div class="ct-form">
+          <h3>Envie uma Mensagem</h3>
+          <form onsubmit="submitCt(event)">
+            <div class="frow">
+              <div class="fg">
+                <label>Nome</label
+                ><input type="text" placeholder="Seu nome" required />
+              </div>
+              <div class="fg">
+                <label>E-mail</label
+                ><input type="email" placeholder="seu@email.com" required />
+              </div>
+            </div>
+            <div class="fg">
+              <label>Telefone</label
+              ><input type="tel" placeholder="(00) 00000-0000" />
+            </div>
+            <div class="fg">
+              <label>Assunto</label
+              ><select>
+                <option value="">Selecione o assunto</option>
+                <option>Primeira Visita</option>
+                <option>Aconselhamento Pastoral</option>
+                <option>Pedido de Oração</option>
+                <option>Eventos e Atividades</option>
+                <option>Outros</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label>Mensagem</label
+              ><textarea
+                placeholder="Escreva sua mensagem..."
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn-pri btn-full">
+              <span>Enviar Mensagem</span><i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============== SECRETARIA =============== -->
+    <section id="secretaria" class="adm-sec">
+      <div class="section-header reveal">
+        <span class="section-tag">Área Restrita</span>
+        <h2 class="section-title"><span class="gold-text">Secretaria</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <!-- LOGIN -->
+      <div id="secLogin" class="login-wrap reveal">
+        <div class="login-card">
+          <div class="login-logo">
+            <div class="lic">🔐</div>
+            <h3>Acesso Secretaria</h3>
+            <p>Digite suas credenciais para acessar o painel</p>
+          </div>
+          <form onsubmit="doLogin('sec', event)">
+            <div class="fg">
+              <label><i class="fab fa-google"></i> Gmail</label
+              ><input
+                type="email"
+                placeholder="secretaria@ieadip.com.br"
+                required
+              />
+            </div>
+            <div class="fg">
+              <label><i class="fas fa-lock"></i> Senha</label>
+              <div class="ipass">
+                <input
+                  type="password"
+                  id="secPw"
+                  placeholder="••••••••"
+                  required
+                /><button type="button" onclick="togPw('secPw', this)">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="btn-pri btn-full"
+              style="margin-top: 0.5rem"
+            >
+              <span>Entrar</span><i class="fas fa-arrow-right"></i>
+            </button>
+            <p class="login-hint">Demo: qualquer e-mail e senha</p>
+          </form>
+        </div>
+      </div>
+
+      <!-- DASHBOARD -->
+      <div id="secDash" style="display: none">
+        <div class="dash-wrap">
+          <div class="dash-hdr">
+            <h3><i class="fas fa-shield-halved"></i> Painel da Secretaria</h3>
+            <button class="btn-out" onclick="doLogout('sec')">
+              <i class="fas fa-sign-out-alt"></i> Sair
+            </button>
+          </div>
+          <div class="cards-row" id="secKpis"></div>
+          <div class="tabs">
+            <div class="tab act" onclick="switchTab('sec', 'membros', this)">
+              <i class="fas fa-users"></i> Membros
+            </div>
+            <div class="tab" onclick="switchTab('sec', 'departamentos', this)">
+              <i class="fas fa-sitemap"></i> Departamentos
+            </div>
+          </div>
+
+          <!-- MEMBROS TAB -->
+          <div id="sec-membros" class="tab-pane act">
+            <div class="panel">
+              <div class="panel-hdr">
+                <h4>
+                  <i
+                    class="fas fa-users"
+                    style="color: var(--gold-2); margin-right: 0.5rem"
+                  ></i
+                  >Cadastro de Membros
+                </h4>
+                <button
+                  class="btn-pri"
+                  style="
+                    padding: 0.5rem 1rem;
+                    font-size: 0.75rem;
+                    border-radius: 8px;
+                  "
+                  onclick="toggleAddMembro()"
+                >
+                  <i class="fas fa-plus"></i> Novo Membro
+                </button>
+              </div>
+              <div class="panel-body">
+                <div id="addMembroForm" class="add-form">
+                  <div
+                    style="
+                      background: rgba(201, 168, 76, 0.05);
+                      border: 1px solid rgba(201, 168, 76, 0.18);
+                      border-radius: 12px;
+                      padding: 1.4rem;
+                      margin-bottom: 1.4rem;
+                    "
+                  >
+                    <h4
+                      style="
+                        font-family: &quot;Cormorant Garamond&quot;, serif;
+                        font-size: 1.1rem;
+                        color: var(--gold-1);
+                        margin-bottom: 1.1rem;
+                      "
+                      id="memFormTitle"
+                    >
+                      Novo Membro
+                    </h4>
+                    <input type="hidden" id="memEditId" />
+                    <div class="frow">
+                      <div class="fg">
+                        <label>Nome Completo*</label
+                        ><input
+                          type="text"
+                          id="memNome"
+                          placeholder="Nome completo"
+                        />
+                      </div>
+                      <div class="fg">
+                        <label>Data de Nascimento</label
+                        ><input type="date" id="memNasc" />
+                      </div>
+                    </div>
+                    <div class="frow">
+                      <div class="fg">
+                        <label>Telefone</label
+                        ><input
+                          type="tel"
+                          id="memTel"
+                          placeholder="(34) 99999-9999"
+                        />
+                      </div>
+                      <div class="fg">
+                        <label>E-mail</label
+                        ><input
+                          type="email"
+                          id="memEmail"
+                          placeholder="email@exemplo.com"
+                        />
+                      </div>
+                    </div>
+                    <div class="frow">
+                      <div class="fg">
+                        <label>Departamento</label
+                        ><select id="memDep">
+                          <option value="">Selecione</option>
+                          <option>Lírio dos Vales</option>
+                          <option>Coluna de Betel</option>
+                          <option>Jardim de Deus</option>
+                          <option>Herdeiros da Promessa</option>
+                          <option>Coluna da Fé</option>                      
+                          <option>Equipe de Missões</option>
+                          <option>Equipe de Mídia</option>
+                          <option>Técnico de Som</option>
+                        </select>
+                      </div>
+                      <div class="fg">
+                        <label>Função</label
+                        ><select id="memFunc">
+                          <option value="">Selecione</option>
+                          <option>Pastor</option>
+                          <option>Presbítero</option>
+                          <option>Diácono</option>
+                          <option>Cooperador</option>
+                          <option>Evangelista</option>
+                          <option>Líder</option>
+                          <option>Membro</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="frow">
+                      <div class="fg">
+                        <label>Data de Ingresso</label
+                        ><input type="month" id="memIng" />
+                      </div>
+                      <div class="fg">
+                        <label>Status</label
+                        ><select id="memStatus">
+                          <option value="Ativo">Ativo</option>
+                          <option value="Inativo">Inativo</option>
+                          <option value="Transferido">Transferido</option>
+                          <option value="Em Aconselhamento">
+                            Em Aconselhamento
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="fg">
+                      <label>Endereço</label
+                      ><input
+                        type="text"
+                        id="memEnd"
+                        placeholder="Rua, número, bairro"
+                      />
+                    </div>
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap">
+                      <button
+                        class="btn-pri"
+                        style="
+                          padding: 0.65rem 1.4rem;
+                          font-size: 0.82rem;
+                          border-radius: 8px;
+                        "
+                        onclick="saveMembro()"
+                      >
+                        <i class="fas fa-save"></i> Salvar
+                      </button>
+                      <button
+                        class="btn-sec"
+                        style="
+                          padding: 0.65rem 1.4rem;
+                          font-size: 0.82rem;
+                          border-radius: 8px;
+                          cursor: pointer;
+                        "
+                        onclick="toggleAddMembro()"
+                      >
+                        <i class="fas fa-times"></i> Cancelar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="srch">
+                  <input
+                    type="text"
+                    id="memSearch"
+                    placeholder="🔍 Buscar por nome..."
+                    oninput="renderMembros()"
+                  />
+                  <select id="memDepFil" onchange="renderMembros()">
+                    <option value="">Todos os departamentos</option>
+                    <option>Lírio dos Vales</option>
+                    <option>Coluna de Betel</option>
+                    <option>Jardim de Deus</option>
+                    <option>Herdeiros da Promessa</option>
+                    <option>Coluna da Fé</option>
+                    <option>Jovens</option>
+                    <option>Diaconato</option>
+                    <option>Equipe de Missões</option>
+                    <option>Equipe de Mídia</option>
+                  </select>
+                  <select id="memStFil" onchange="renderMembros()">
+                    <option value="">Todos os status</option>
+                    <option>Ativo</option>
+                    <option>Inativo</option>
+                    <option>Transferido</option>
+                  </select>
+                </div>
+                <div class="tbl-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Nome</th>
+                        <th>Departamento</th>
+                        <th>Função</th>
+                        <th>Ingresso</th>
+                        <th>Telefone</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody id="memTbody"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- DEPARTAMENTOS TAB -->
+          <div id="sec-departamentos" class="tab-pane">
+            <div class="panel">
+              <div class="panel-hdr">
+                <h4>
+                  <i
+                    class="fas fa-sitemap"
+                    style="color: var(--gold-2); margin-right: 0.5rem"
+                  ></i
+                  >Departamentos
+                </h4>
+              </div>
+              <div class="panel-body">
+                <div
+                  id="depsGrid"
+                  style="
+                    display: grid;
+                    grid-template-columns: repeat(
+                      auto-fill,
+                      minmax(220px, 1fr)
+                    );
+                    gap: 1rem;
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============== TESOURARIA =============== -->
+    <section id="tesouraria" class="adm-sec tes">
+      <div class="section-header reveal">
+        <span class="section-tag">Área Restrita</span>
+        <h2 class="section-title"><span class="gold-text">Tesouraria</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <!-- LOGIN -->
+      <div id="tesLogin" class="login-wrap reveal">
+        <div class="login-card">
+          <div class="login-logo">
+            <div class="lic">💰</div>
+            <h3>Acesso Tesouraria</h3>
+            <p>Área financeira restrita. Acesse com suas credenciais.</p>
+          </div>
+          <form onsubmit="doLogin('tes', event)">
+            <div class="fg">
+              <label><i class="fab fa-google"></i> Gmail</label
+              ><input
+                type="email"
+                placeholder="tesouraria@ieadip.com.br"
+                required
+              />
+            </div>
+            <div class="fg">
+              <label><i class="fas fa-lock"></i> Senha</label>
+              <div class="ipass">
+                <input
+                  type="password"
+                  id="tesPw"
+                  placeholder="••••••••"
+                  required
+                /><button type="button" onclick="togPw('tesPw', this)">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="btn-pri btn-full"
+              style="margin-top: 0.5rem"
+            >
+              <span>Entrar</span><i class="fas fa-arrow-right"></i>
+            </button>
+            <p class="login-hint">Demo: qualquer e-mail e senha</p>
+          </form>
+        </div>
+      </div>
+
+      <!-- DASHBOARD -->
+      <div id="tesDash" style="display: none">
+        <div class="dash-wrap">
+          <div class="dash-hdr">
+            <h3><i class="fas fa-coins"></i> Painel Financeiro</h3>
+            <select
+              id="tesMes"
+              onchange="renderTes()"
+              style="
+                padding: 0.42rem 0.85rem;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(201, 168, 76, 0.22);
+                border-radius: 8px;
+                color: #fff;
+                font-size: 0.8rem;
+                outline: none;
+              "
+            >
+              <option value="all">Todos os períodos</option>
+              <option value="2025-05">Maio 2025</option>
+              <option value="2025-04">Abril 2025</option>
+              <option value="2025-03">Março 2025</option>
+            </select>
+            <button class="btn-out" onclick="doLogout('tes')">
+              <i class="fas fa-sign-out-alt"></i> Sair
+            </button>
+          </div>
+          <div class="cards-row" id="tesKpis"></div>
+          <div class="tabs">
+            <div class="tab act" onclick="switchTab('tes', 'visao', this)">
+              <i class="fas fa-chart-line"></i> Visão Geral
+            </div>
+            <div class="tab" onclick="switchTab('tes', 'lancamentos', this)">
+              <i class="fas fa-plus-circle"></i> Lançamentos
+            </div>
+            <div class="tab" onclick="switchTab('tes', 'dizimistas', this)">
+              <i class="fas fa-hand-holding-heart"></i> Dizimistas
+            </div>
+            <div class="tab" onclick="switchTab('tes', 'relatorio', this)">
+              <i class="fas fa-file-alt"></i> Relatório
+            </div>
+          </div>
+
+          <!-- VISÃO GERAL -->
+          <div id="tes-visao" class="tab-pane act">
+            <div class="chart-row">
+              <div class="chart-box">
+                <h4>Entradas vs Saídas — Últimos 6 Meses</h4>
+                <div class="bar-chart" id="barChart"></div>
+                <div class="bar-leg">
+                  <span class="li">■ Entradas</span
+                  ><span class="lo">■ Saídas</span>
+                </div>
+              </div>
+              <div class="chart-box" style="text-align: center">
+                <h4>Distribuição de Receitas</h4>
+                <div class="donut-wrap">
+                  <svg viewBox="0 0 120 120" class="donut-svg" id="donutSvg">
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="45"
+                      fill="none"
+                      stroke="#0A1628"
+                      stroke-width="18"
+                    />
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="45"
+                      fill="none"
+                      stroke="#C9A84C"
+                      stroke-width="18"
+                      stroke-dasharray="170 113"
+                      stroke-dashoffset="0"
+                      transform="rotate(-90 60 60)"
+                    />
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="45"
+                      fill="none"
+                      stroke="#5b9bd5"
+                      stroke-width="18"
+                      stroke-dasharray="102 181"
+                      stroke-dashoffset="-170"
+                      transform="rotate(-90 60 60)"
+                    />
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="45"
+                      fill="none"
+                      stroke="#4caf82"
+                      stroke-width="18"
+                      stroke-dasharray="11 272"
+                      stroke-dashoffset="-272"
+                      transform="rotate(-90 60 60)"
+                    />
+                  </svg>
+                  <div class="donut-ctr">
+                    <span>Total</span><strong id="donutTotal">R$0</strong>
+                  </div>
+                </div>
+                <div class="donut-leg">
+                  <div>
+                    <span class="ds" style="background: #c9a84c"></span>Dízimos
+                  </div>
+                  <div>
+                    <span class="ds" style="background: #5b9bd5"></span>Ofertas
+                  </div>
+                  <div>
+                    <span class="ds" style="background: #4caf82"></span>Eventos
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="panel-hdr"><h4>Últimas Movimentações</h4></div>
+              <div class="panel-body">
+                <div class="tbl-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Data</th>
+                        <th>Descrição</th>
+                        <th>Categoria</th>
+                        <th>Tipo</th>
+                        <th>Valor</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tesRecent"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LANÇAMENTOS -->
+          <div id="tes-lancamentos" class="tab-pane">
+            <div class="panel">
+              <div class="panel-hdr">
+                <h4>
+                  <i
+                    class="fas fa-plus-circle"
+                    style="color: var(--gold-2); margin-right: 0.5rem"
+                  ></i
+                  >Novo Lançamento
+                </h4>
+              </div>
+              <div class="panel-body">
+                <div
+                  style="
+                    background: rgba(201, 168, 76, 0.04);
+                    border: 1px solid rgba(201, 168, 76, 0.16);
+                    border-radius: 12px;
+                    padding: 1.4rem;
+                    margin-bottom: 1.4rem;
+                  "
+                >
+                  <input type="hidden" id="tesEditId" />
+                  <div class="frow">
+                    <div class="fg">
+                      <label>Tipo*</label
+                      ><select id="tesTipo" onchange="updateTesCateg()">
+                        <option value="entrada">Entrada</option>
+                        <option value="saida">Saída</option>
+                      </select>
+                    </div>
+                    <div class="fg">
+                      <label>Categoria*</label
+                      ><select id="tesCateg">
+                        <option value="Dízimo">Dízimo</option>
+                        <option value="Oferta">Oferta</option>
+                        <option value="Oferta Missionária">
+                          Oferta Missionária
+                        </option>
+                        <option value="Evento">Evento</option>
+                        <option value="Outras Entradas">Outras Entradas</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="frow">
+                    <div class="fg">
+                      <label>Descrição*</label
+                      ><input
+                        type="text"
+                        id="tesDesc"
+                        placeholder="Ex: Dízimos culto domingo manhã"
+                      />
+                    </div>
+                    <div class="fg">
+                      <label>Valor (R$)*</label
+                      ><input
+                        type="number"
+                        id="tesVal"
+                        placeholder="0,00"
+                        step="0.01"
+                        min="0"
+                      />
+                    </div>
+                  </div>
+                  <div class="frow">
+                    <div class="fg">
+                      <label>Data*</label><input type="date" id="tesData" />
+                    </div>
+                    <div class="fg">
+                      <label>Responsável / Observação</label
+                      ><input
+                        type="text"
+                        id="tesObs"
+                        placeholder="Nome ou observação"
+                      />
+                    </div>
+                  </div>
+                  <div style="display: flex; gap: 0.75rem; flex-wrap: wrap">
+                    <button
+                      class="btn-pri"
+                      style="
+                        padding: 0.65rem 1.4rem;
+                        font-size: 0.82rem;
+                        border-radius: 8px;
+                      "
+                      onclick="saveTes()"
+                    >
+                      <i class="fas fa-save"></i> Salvar
+                    </button>
+                    <button
+                      class="btn-sec"
+                      style="
+                        padding: 0.65rem 1.4rem;
+                        font-size: 0.82rem;
+                        border-radius: 8px;
+                        cursor: pointer;
+                      "
+                      onclick="clearTesForm()"
+                    >
+                      <i class="fas fa-eraser"></i> Limpar
+                    </button>
+                  </div>
+                </div>
+                <div class="srch">
+                  <input
+                    type="text"
+                    id="tesSearch"
+                    placeholder="🔍 Buscar lançamento..."
+                    oninput="renderTesLanc()"
+                  />
+                  <select id="tesTipoFil" onchange="renderTesLanc()">
+                    <option value="">Todos</option>
+                    <option value="entrada">Entradas</option>
+                    <option value="saida">Saídas</option>
+                  </select>
+                  <select id="tesCategFil" onchange="renderTesLanc()">
+                    <option value="">Todas categorias</option>
+                    <option>Dízimo</option>
+                    <option>Oferta</option>
+                    <option>Oferta Missionária</option>
+                    <option>Evento</option>
+                    <option>Outras Entradas</option>
+                    <option>Despesa Fixa</option>
+                    <option>Manutenção</option>
+                    <option>Missões</option>
+                    <option>Outras Saídas</option>
+                  </select>
+                </div>
+                <div class="tbl-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Data</th>
+                        <th>Descrição</th>
+                        <th>Categoria</th>
+                        <th>Tipo</th>
+                        <th>Valor</th>
+                        <th>Obs.</th>
+                        <th>Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tesLancTbody"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DIZIMISTAS -->
+          <div id="tes-dizimistas" class="tab-pane">
+            <div class="panel">
+              <div class="panel-hdr">
+                <h4>
+                  <i
+                    class="fas fa-hand-holding-heart"
+                    style="color: var(--gold-2); margin-right: 0.5rem"
+                  ></i
+                  >Dizimistas
+                </h4>
+                <button
+                  class="btn-pri"
+                  style="
+                    padding: 0.5rem 1rem;
+                    font-size: 0.75rem;
+                    border-radius: 8px;
+                  "
+                  onclick="openDizModal()"
+                >
+                  <i class="fas fa-plus"></i> Registrar Dízimo
+                </button>
+              </div>
+              <div class="panel-body">
+                <div class="srch">
+                  <input
+                    type="text"
+                    id="dizSearch"
+                    placeholder="🔍 Buscar dizimista..."
+                    oninput="renderDiz()"
+                  />
+                </div>
+                <div class="tbl-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Membro</th>
+                        <th>Departamento</th>
+                        <th>Último Dízimo</th>
+                        <th>Total Anual</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="dizTbody"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RELATÓRIO -->
+          <div id="tes-relatorio" class="tab-pane">
+            <div class="panel">
+              <div class="panel-hdr">
+                <h4>
+                  <i
+                    class="fas fa-file-alt"
+                    style="color: var(--gold-2); margin-right: 0.5rem"
+                  ></i
+                  >Relatório Financeiro
+                </h4>
+                <div style="display: flex; gap: 0.75rem; flex-wrap: wrap">
+                  <select
+                    id="relMes"
+                    style="
+                      padding: 0.42rem 0.85rem;
+                      background: rgba(255, 255, 255, 0.05);
+                      border: 1px solid rgba(201, 168, 76, 0.2);
+                      border-radius: 8px;
+                      color: #fff;
+                      font-size: 0.8rem;
+                      outline: none;
+                    "
+                  >
+                    <option value="all">Todo o período</option>
+                    <option value="2026-05">Maio 2026</option>
+                    <option value="2026-04">Abril 2026</option>
+                    <option value="2026-03">Março 2026</option>
+                    <option value="2026-02">Fevereiro 2026</option>
+                    <option value="2026-01">Janeiro 2026</option>
+                  </select>
+                  <button
+                    class="btn-pri"
+                    style="
+                      padding: 0.48rem 1rem;
+                      font-size: 0.75rem;
+                      border-radius: 8px;
+                    "
+                    onclick="gerarRel()"
+                  >
+                    <i class="fas fa-chart-bar"></i> Gerar
+                  </button>
+                </div>
+              </div>
+              <div class="panel-body" id="relBody">
+                <p
+                  style="
+                    color: var(--muted);
+                    font-size: 0.88rem;
+                    text-align: center;
+                    padding: 2rem;
+                  "
+                >
+                  Selecione o período e clique em "Gerar"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL - Registrar Dízimo -->
+    <div class="modal" id="dizModal">
+      <div class="modal-bg" onclick="closeDizModal()"></div>
+      <div class="modal-box">
+        <button class="modal-close" onclick="closeDizModal()">
+          <i class="fas fa-times"></i>
+        </button>
+        <h3>Registrar Dízimo</h3>
+        <div class="fg">
+          <label>Membro</label
+          ><select id="dizMem"></select>
+        </div>
+        <div class="frow">
+          <div class="fg">
+            <label>Valor (R$)</label
+            ><input
+              type="number"
+              id="dizVal"
+              placeholder="0,00"
+              step="0.01"
+              min="0"
+            />
+          </div>
+          <div class="fg">
+            <label>Data</label><input type="date" id="dizData" />
+          </div>
+        </div>
+        <div class="fg">
+          <label>Observação</label
+          ><input type="text" id="dizObs" placeholder="Opcional" />
+        </div>
+        <button class="btn-pri btn-full" onclick="saveDiz()">
+          <i class="fas fa-save"></i> Registrar Dízimo
+        </button>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="ft-top">
+        <div>
+          <div class="ft-logo">
+            <div class="li">✝</div>
+            <span>IEADIP <em>Guimarânia</em></span>
+          </div>
+          <p class="ft-desc">
+            Plantados na casa do Senhor, florescerão nos átrios do nosso Deus.
+            Uma comunidade de fé, amor e esperança.
+          </p>
+          <div class="ft-soc">
+            <a
+              href="https://www.instagram.com/ieadip.guimarania/"
+              target="_blank"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://wa.me/+5534998111439"
+              target="_blank"
+              aria-label="WhatsApp"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="ft-col">Links Rápidos</h4>
+          <ul class="ft-links">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#agenda">Agenda</a></li>
+            <li><a href="#midias">Mídias</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="ft-col">Departamentos</h4>
+          <ul class="ft-links">
+            <li><a href="#">Lírio dos Vales</a></li>
+            <li><a href="#">Coluna de Betel</a></li>
+            <li><a href="#">Jardim de Deus</a></li>
+            <li><a href="#">Herdeiros da Promessa</a></li>
+            li><a href="#">Coluna da Fé</a></li>
+            <li><a href="#">Equipe de Missões</a></li>
+            <li><a href="#">Equipe de Mídia</a></li>
+          </ul>
+        </div>
+        <div class="ft-ct">
+          <h4 class="ft-col">Contato</h4>
+          <p>
+            <i class="fas fa-map-marker-alt"></i>Rua Guaicurus, 320, Guimarânia
+            – MG
+          </p>
+          <p><i class="fas fa-phone"></i>(34) 99811-1439</p>
+          <p><i class="fab fa-whatsapp"></i>(34) 99811-1439</p>
+          <p style="margin-top: 1rem; font-size: 0.82rem; opacity: 0.58">
+            <i class="fas fa-clock"></i>Dom 8h30 | 19h00 · Ter, Qui 19h00
+          </p>
+        </div>
+      </div>
+      <div class="ft-bot">
+        <div class="ft-verse">
+          "Louvai ao Senhor, porque ele é bom; pois a sua misericórdia dura para
+          sempre." — Salmos 107:1
+        </div>
+        <div class="ft-copy">
+          <span>© 2025 IEADIP Guimarânia. Todos os direitos reservados.</span>
+          <span
+            >Desenvolvido com
+            <i class="fas fa-heart" style="color: var(--gold-2)"></i> e
+            excelência</span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <a href="https://wa.me/+5534998111439" class="fl-wa" target="_blank"
+      ><i class="fab fa-whatsapp"></i
+      ><span class="fl-wa-tip">Fale Conosco</span></a
+    >
+    <button
+      id="btt"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      aria-label="Topo"
+    >
+      <i class="fas fa-chevron-up"></i>
+    </button>
+    <div class="toast" id="toast"></div>
+
+    <script>
+      /* ===== DATA STORE ===== */
+      let membros = [
+        {
+          id: 1,
+          nome: "Ana Maria Silva",
+          nasc: "1985-03-12",
+          tel: "(34) 99999-0001",
+          email: "ana@email.com",
+          dep: "Senhoras",
+          func: "Cooperadora",
+          ing: "2020-01",
+          status: "Ativo",
+          end: "Rua das Flores, 45",
+        },
+        {
+          id: 2,
+          nome: "Paulo Henrique Ferreira",
+          nasc: "1992-07-28",
+          tel: "(34) 99999-0002",
+          email: "paulo@email.com",
+          dep: "Jovens",
+          func: "Líder",
+          ing: "2018-06",
+          status: "Ativo",
+          end: "Av. Brasil, 210",
+        },
+        {
+          id: 3,
+          nome: "Josefa Almeida Santos",
+          nasc: "1975-11-05",
+          tel: "(34) 99999-0003",
+          email: "josefa@email.com",
+          dep: "Louvor",
+          func: "Cooperadora",
+          ing: "2015-03",
+          status: "Ativo",
+          end: "Rua Guaicurus, 88",
+        },
+        {
+          id: 4,
+          nome: "Carlos Roberto Mendes",
+          nasc: "1968-01-22",
+          tel: "(34) 99999-0004",
+          email: "carlos@email.com",
+          dep: "Diaconato",
+          func: "Diácono",
+          ing: "2012-09",
+          status: "Ativo",
+          end: "Rua dos Cedros, 320",
+        },
+        {
+          id: 5,
+          nome: "Maria das Graças Oliveira",
+          nasc: "1958-06-14",
+          tel: "(34) 99999-0005",
+          email: "",
+          dep: "Círculo de Oração",
+          func: "Líder",
+          ing: "2010-02",
+          status: "Ativo",
+          end: "Bairro Centro, 15",
+        },
+        {
+          id: 6,
+          nome: "Lucas Pereira Costa",
+          nasc: "2001-09-03",
+          tel: "(34) 99999-0006",
+          email: "lucas@email.com",
+          dep: "Jovens",
+          func: "Membro",
+          ing: "2024-01",
+          status: "Ativo",
+          end: "Rua Nova, 55",
+        },
+        {
+          id: 7,
+          nome: "Fernanda Lima Rocha",
+          nasc: "1988-12-18",
+          tel: "(34) 99999-0007",
+          email: "fernanda@email.com",
+          dep: "Missões",
+          func: "Evangelista",
+          ing: "2017-08",
+          status: "Ativo",
+          end: "Av. Central, 130",
+        },
+        {
+          id: 8,
+          nome: "Roberto Souza Junior",
+          nasc: "1979-04-30",
+          tel: "(34) 99999-0008",
+          email: "roberto@email.com",
+          dep: "Diaconato",
+          func: "Presbítero",
+          ing: "2009-11",
+          status: "Ativo",
+          end: "Rua das Acacias, 77",
+        },
+      ];
+      let memNextId = 9;
+
+      let presencas = [
+        {
+          data: "2025-05-18",
+          culto: "Culto Domingo Noite",
+          presentes: [1, 2, 3, 4, 5, 7, 8],
+          total: 8,
+        },
+        {
+          data: "2025-05-15",
+          culto: "Culto Quinta-feira",
+          presentes: [1, 3, 5, 6, 7],
+          total: 8,
+        },
+        {
+          data: "2025-05-11",
+          culto: "EBD Dominical",
+          presentes: [1, 2, 3, 4, 5, 6, 7, 8],
+          total: 8,
+        },
+      ];
+      let presChecked = {};
+
+      let transacoes = [
+        {
+          id: 1,
+          tipo: "entrada",
+          categ: "Dízimo",
+          desc: "Dízimos — Culto Domingo Manhã",
+          val: 1240,
+          data: "2025-05-18",
+          obs: "Tesoureiro: Carlos",
+        },
+        {
+          id: 2,
+          tipo: "entrada",
+          categ: "Oferta",
+          desc: "Oferta Especial Missões",
+          val: 380,
+          data: "2025-05-18",
+          obs: "",
+        },
+        {
+          id: 3,
+          tipo: "saida",
+          categ: "Despesa Fixa",
+          desc: "Conta de Energia Elétrica",
+          val: 420,
+          data: "2025-05-15",
+          obs: "Vencimento: 16/05",
+        },
+        {
+          id: 4,
+          tipo: "saida",
+          categ: "Manutenção",
+          desc: "Material de Limpeza",
+          val: 85,
+          data: "2025-05-15",
+          obs: "",
+        },
+        {
+          id: 5,
+          tipo: "entrada",
+          categ: "Dízimo",
+          desc: "Dízimos — Culto Quinta-feira",
+          val: 680,
+          data: "2025-05-15",
+          obs: "",
+        },
+        {
+          id: 6,
+          tipo: "entrada",
+          categ: "Oferta",
+          desc: "Oferta — Domingo Noite",
+          val: 520,
+          data: "2025-05-11",
+          obs: "",
+        },
+        {
+          id: 7,
+          tipo: "entrada",
+          categ: "Dízimo",
+          desc: "Dízimos — EBD Dominical",
+          val: 960,
+          data: "2025-05-11",
+          obs: "",
+        },
+        {
+          id: 8,
+          tipo: "saida",
+          categ: "Missões",
+          desc: "Contribuição Missões Regionais",
+          val: 300,
+          data: "2025-05-08",
+          obs: "",
+        },
+        {
+          id: 9,
+          tipo: "entrada",
+          categ: "Dízimo",
+          desc: "Dízimos — Abril",
+          val: 5200,
+          data: "2025-04-28",
+          obs: "",
+        },
+        {
+          id: 10,
+          tipo: "entrada",
+          categ: "Oferta",
+          desc: "Oferta — Congresso",
+          val: 1800,
+          data: "2025-04-20",
+          obs: "",
+        },
+        {
+          id: 11,
+          tipo: "saida",
+          categ: "Despesa Fixa",
+          desc: "Conta de Água",
+          val: 180,
+          data: "2025-04-15",
+          obs: "",
+        },
+        {
+          id: 12,
+          tipo: "entrada",
+          categ: "Dízimo",
+          desc: "Dízimos — Março",
+          val: 4800,
+          data: "2025-03-31",
+          obs: "",
+        },
+      ];
+      let tesNextId = 13;
+
+      let dizimistas = [
+        {
+          memId: 1,
+          ultimo: "2025-05-18",
+          totalAnual: 1350,
+          hist: [150, 150, 150, 150, 150, 150, 150, 150, 150],
+        },
+        {
+          memId: 2,
+          ultimo: "2025-05-18",
+          totalAnual: 720,
+          hist: [80, 80, 80, 80, 80, 80, 80, 80, 80],
+        },
+        {
+          memId: 3,
+          ultimo: "2025-05-11",
+          totalAnual: 900,
+          hist: [100, 100, 100, 100, 100, 100, 100, 100, 100],
+        },
+        {
+          memId: 4,
+          ultimo: "2025-04-28",
+          totalAnual: 1800,
+          hist: [200, 200, 200, 200, 200, 200, 200, 200, 200],
+        },
+        {
+          memId: 7,
+          ultimo: "2025-05-18",
+          totalAnual: 540,
+          hist: [60, 60, 60, 60, 60, 60, 60, 60, 60],
+        },
+        {
+          memId: 8,
+          ultimo: "2025-05-11",
+          totalAnual: 2700,
+          hist: [300, 300, 300, 300, 300, 300, 300, 300, 300],
+        },
+      ];
+
+      /* ===== PARTICLES ===== */
+      (function () {
+        const c = document.getElementById("ptc"),
+          n = window.innerWidth < 768 ? 15 : 30;
+        for (let i = 0; i < n; i++) {
+          const p = document.createElement("div");
+          p.className = "pt";
+          const s = Math.random() * 3.5 + 0.8;
+          p.style.cssText = `width:${s}px;height:${s}px;left:${Math.random() * 100}%;animation-duration:${Math.random() * 20 + 12}s;animation-delay:${Math.random() * 14}s;opacity:${Math.random() * 0.5 + 0.1}`;
+          c.appendChild(p);
+        }
+      })();
+
+      /* ===== SCROLL / HEADER ===== */
+      window.addEventListener(
+        "scroll",
+        () => {
+          const sy = window.scrollY;
+          document.getElementById("hdr").classList.toggle("stk", sy > 60);
+          document.getElementById("btt").classList.toggle("vis", sy > 400);
+          updateActiveNav();
+        },
+        { passive: true },
+      );
+
+      function updateActiveNav() {
+        const secs = document.querySelectorAll("section[id]");
+        let cur = "";
+        secs.forEach((s) => {
+          if (window.scrollY >= s.offsetTop - 130) cur = s.id;
+        });
+        document
+          .querySelectorAll(".nl")
+          .forEach((l) =>
+            l.classList.toggle("act", l.getAttribute("href") === "#" + cur),
+          );
+      }
+
+      /* ===== MOBILE MENU ===== */
+      const ham = document.getElementById("ham"),
+        mob = document.getElementById("mobMenu");
+      ham.addEventListener("click", () => {
+        mob.classList.toggle("open");
+        const sp = ham.querySelectorAll("span");
+        const op = mob.classList.contains("open");
+        sp[0].style.transform = op ? "rotate(45deg) translate(5px,5px)" : "";
+        sp[1].style.opacity = op ? "0" : "";
+        sp[2].style.transform = op ? "rotate(-45deg) translate(5px,-5px)" : "";
+      });
+      document.querySelectorAll(".mobl").forEach((l) =>
+        l.addEventListener("click", () => {
+          mob.classList.remove("open");
+          ham.querySelectorAll("span").forEach((s) => {
+            s.style.transform = "";
+            s.style.opacity = "";
+          });
+        }),
+      );
+
+      /* ===== SMOOTH SCROLL ===== */
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const t = document.querySelector(a.getAttribute("href"));
+          if (t) {
+            e.preventDefault();
+            t.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+
+      /* ===== REVEAL ===== */
+      const revObs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              revObs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+      );
+      document.querySelectorAll(".reveal").forEach((r) => revObs.observe(r));
+
+      /* ===== VERSE ===== */
+      const VV = [
+        {
+          t: '"Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo o que nele crê não pereça, mas tenha a vida eterna."',
+          r: "— João 3:16",
+        },
+        {
+          t: '"O Senhor é o meu pastor; nada me faltará."',
+          r: "— Salmos 23:1",
+        },
+        { t: '"Tudo posso naquele que me fortalece."', r: "— Filipenses 4:13" },
+        {
+          t: '"Confie no Senhor de todo o seu coração e não se apoie em seu próprio entendimento."',
+          r: "— Provérbios 3:5",
+        },
+        {
+          t: '"Mas os que esperam no Senhor renovarão as suas forças, subirão com asas como águias."',
+          r: "— Isaías 40:31",
+        },
+        {
+          t: '"Sede fortes e corajosos. Não temais, pois o Senhor, vosso Deus, anda convosco."',
+          r: "— Deuteronômio 31:6",
+        },
+        {
+          t: '"E conhecereis a verdade, e a verdade vos libertará."',
+          r: "— João 8:32",
+        },
+      ];
+      const vd = VV[new Date().getDay() % VV.length];
+      document.getElementById("vTxt").textContent = vd.t;
+      document.getElementById("vRef").textContent = vd.r;
+
+      /* ===== TESTIMONIALS ===== */
+      let testIdx = 0;
+      const tInner = document.getElementById("testInner"),
+        tDots = document.getElementById("testDots");
+      const tCards = tInner.querySelectorAll(".test-card");
+      tCards.forEach((_, i) => {
+        const d = document.createElement("div");
+        d.className = "tdot" + (i === 0 ? " act" : "");
+        d.onclick = () => goTest(i);
+        tDots.appendChild(d);
+      });
+      function goTest(i) {
+        testIdx = i;
+        const w = tCards[0].offsetWidth + 24;
+        tInner.style.transform = `translateX(-${i * w}px)`;
+        document
+          .querySelectorAll(".tdot")
+          .forEach((d, j) => d.classList.toggle("act", j === i));
+      }
+      setInterval(() => goTest((testIdx + 1) % tCards.length), 5000);
+
+      /* ===== TOAST ===== */
+      function toast(msg) {
+        const t = document.getElementById("toast");
+        t.textContent = msg;
+        t.classList.add("show");
+        setTimeout(() => t.classList.remove("show"), 3200);
+      }
+
+      /* ===== FORMS ===== */
+      function submitPray(e) {
+        e.preventDefault();
+        toast("🙏 Pedido enviado! Intercederemos por você.");
+        e.target.reset();
+      }
+      function submitCt(e) {
+        e.preventDefault();
+        toast("✉ Mensagem enviada! Responderemos em breve.");
+        e.target.reset();
+      }
+
+      /* ===== PASSWORD TOGGLE ===== */
+      function togPw(id, btn) {
+        const inp = document.getElementById(id);
+        inp.type = inp.type === "password" ? "text" : "password";
+        btn.querySelector("i").className =
+          "fas fa-eye" + (inp.type === "text" ? "-slash" : "");
+      }
+
+      /* ===== LOGIN / LOGOUT ===== */
+      function doLogin(area, e) {
+        e.preventDefault();
+        toast("✓ Acesso autorizado! Bem-vindo(a).");
+        const login = document.getElementById(area + "Login");
+        const dash = document.getElementById(area + "Dash");
+        login.style.display = "none";
+        dash.style.display = "block";
+        dash.style.opacity = 0;
+        requestAnimationFrame(() => {
+          dash.style.transition = "opacity .5s";
+          dash.style.opacity = 1;
+        });
+        if (area === "sec") initSecDash();
+        else initTesDash();
+      }
+      function doLogout(area) {
+        document.getElementById(area + "Dash").style.display = "none";
+        document.getElementById(area + "Login").style.display = "flex";
+        toast("Sessão encerrada com segurança.");
+      }
+
+      /* ===== TAB SWITCH ===== */
+      function switchTab(area, name, el) {
+        document
+          .querySelectorAll(`#${area}Dash .tab`)
+          .forEach((t) => t.classList.remove("act"));
+        document
+          .querySelectorAll(`#${area}Dash .tab-pane`)
+          .forEach((p) => p.classList.remove("act"));
+        el.classList.add("act");
+        document.getElementById(`${area}-${name}`).classList.add("act");
+        if (area === "sec" && name === "presenca") renderPresGrid();
+        if (area === "sec" && name === "departamentos") renderDeps();
+        if (area === "tes" && name === "dizimistas") renderDiz();
+        if (area === "tes" && name === "relatorio") {
+          document.getElementById("relBody").innerHTML =
+            '<p style="color:var(--muted);font-size:.88rem;text-align:center;padding:2rem">Selecione o período e clique em "Gerar"</p>';
+        }
+      }
+
+      /* ============================================================
+   SECRETARIA
+   ============================================================ */
+      function initSecDash() {
+        renderSecKpis();
+        renderMembros();
+        initPresDate();
+        renderPresHist();
+      }
+
+      function renderSecKpis() {
+        const ativos = membros.filter((m) => m.status === "Ativo").length;
+        const deps = [...new Set(membros.map((m) => m.dep).filter(Boolean))]
+          .length;
+        const lastP = presencas[0];
+        const pct = lastP
+          ? Math.round((lastP.presentes.length / membros.length) * 100)
+          : 0;
+        document.getElementById("secKpis").innerHTML = `
+    <div class="kpi"><i class="fas fa-users"></i><div class="kv">${membros.length}</div><div class="kl">Total de Membros</div></div>
+    <div class="kpi g"><i class="fas fa-check-circle"></i><div class="kv">${ativos}</div><div class="kl">Membros Ativos</div></div>
+    <div class="kpi b"><i class="fas fa-sitemap"></i><div class="kv">${deps}</div><div class="kl">Departamentos</div></div>
+    <div class="kpi"><i class="fas fa-chart-pie"></i><div class="kv">${pct}%</div><div class="kl">Presença Último Culto</div></div>`;
+      }
+
+      /* ---- Membros ---- */
+      function renderMembros() {
+        const q = (
+          document.getElementById("memSearch").value || ""
+        ).toLowerCase();
+        const dep = document.getElementById("memDepFil").value;
+        const st = document.getElementById("memStFil").value;
+        const fil = membros.filter((m) => {
+          const nOk = m.nome.toLowerCase().includes(q);
+          const dOk = !dep || m.dep === dep;
+          const sOk = !st || m.status === st;
+          return nOk && dOk && sOk;
+        });
+        const stBadge = (s) =>
+          s === "Ativo" ? "b-green" : s === "Inativo" ? "b-red" : "b-gold";
+        document.getElementById("memTbody").innerHTML = fil.length
+          ? fil
+              .map(
+                (m) => `
+    <tr>
+      <td><strong>${m.nome}</strong></td>
+      <td>${m.dep || "—"}</td>
+      <td>${m.func || "—"}</td>
+      <td>${m.ing ? m.ing.replace("-", "/") : "—"}</td>
+      <td>${m.tel || "—"}</td>
+      <td><span class="badge ${stBadge(m.status)}">${m.status}</span></td>
+      <td><div class="tbl-actions">
+        <button class="btn-sm btn-e" onclick="editMembro(${m.id})"><i class="fas fa-edit"></i> Editar</button>
+        <button class="btn-sm btn-d" onclick="delMembro(${m.id})"><i class="fas fa-trash"></i></button>
+      </div></td>
+    </tr>`,
+              )
+              .join("")
+          : `<tr><td colspan="7" style="text-align:center;color:var(--muted);padding:2rem">Nenhum membro encontrado.</td></tr>`;
+      }
+
+      function toggleAddMembro() {
+        const f = document.getElementById("addMembroForm");
+        f.classList.toggle("open");
+        if (!f.classList.contains("open")) {
+          clearMemForm();
+        }
+      }
+      function clearMemForm() {
+        [
+          "memNome",
+          "memNasc",
+          "memTel",
+          "memEmail",
+          "memDep",
+          "memFunc",
+          "memIng",
+          "memEnd",
+        ].forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) el.value = "";
+        });
+        document.getElementById("memStatus").value = "Ativo";
+        document.getElementById("memEditId").value = "";
+        document.getElementById("memFormTitle").textContent = "Novo Membro";
+      }
+      function saveMembro() {
+        const nome = document.getElementById("memNome").value.trim();
+        if (!nome) {
+          toast("⚠ Informe o nome completo.");
+          return;
+        }
+        const editId = document.getElementById("memEditId").value;
+        const m = {
+          nome,
+          nasc: document.getElementById("memNasc").value,
+          tel: document.getElementById("memTel").value,
+          email: document.getElementById("memEmail").value,
+          dep: document.getElementById("memDep").value,
+          func: document.getElementById("memFunc").value,
+          ing: document.getElementById("memIng").value,
+          status: document.getElementById("memStatus").value,
+          end: document.getElementById("memEnd").value,
+        };
+        if (editId) {
+          const idx = membros.findIndex((x) => x.id === +editId);
+          if (idx > -1) membros[idx] = { ...membros[idx], ...m };
+          toast("✓ Membro atualizado com sucesso!");
+        } else {
+          m.id = memNextId++;
+          membros.push(m);
+          toast("✓ Membro cadastrado com sucesso!");
+        }
+        clearMemForm();
+        document.getElementById("addMembroForm").classList.remove("open");
+        renderMembros();
+        renderSecKpis();
+        renderPresGrid();
+        renderDiz();
+      }
+      function editMembro(id) {
+        const m = membros.find((x) => x.id === id);
+        if (!m) return;
+        document.getElementById("memNome").value = m.nome;
+        document.getElementById("memNasc").value = m.nasc || "";
+        document.getElementById("memTel").value = m.tel || "";
+        document.getElementById("memEmail").value = m.email || "";
+        document.getElementById("memDep").value = m.dep || "";
+        document.getElementById("memFunc").value = m.func || "";
+        document.getElementById("memIng").value = m.ing || "";
+        document.getElementById("memStatus").value = m.status || "Ativo";
+        document.getElementById("memEnd").value = m.end || "";
+        document.getElementById("memEditId").value = id;
+        document.getElementById("memFormTitle").textContent = "Editar Membro";
+        document.getElementById("addMembroForm").classList.add("open");
+        document
+          .getElementById("addMembroForm")
+          .scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      function delMembro(id) {
+        if (!confirm("Excluir este membro?")) return;
+        membros = membros.filter((m) => m.id !== id);
+        renderMembros();
+        renderSecKpis();
+        renderPresGrid();
+        toast("✓ Membro removido.");
+      }
+
+      /* ---- Presença ---- */
+      function initPresDate() {
+        const d = document.getElementById("presData");
+        d.value = new Date().toISOString().split("T")[0];
+      }
+      function renderPresGrid() {
+        presChecked = {};
+        document.getElementById("presGrid").innerHTML = membros
+          .map(
+            (m) => `
+    <div class="pres-item" id="pi-${m.id}" onclick="togglePres(${m.id})">
+      <div class="pres-cb" id="pcb-${m.id}"></div>
+      <div><div class="pres-nm">${m.nome.split(" ").slice(0, 2).join(" ")}</div><div class="pres-dep">${m.dep || "Geral"}</div></div>
+    </div>`,
+          )
+          .join("");
+      }
+      function togglePres(id) {
+        presChecked[id] = !presChecked[id];
+        const item = document.getElementById("pi-" + id);
+        item.classList.toggle("checked", presChecked[id]);
+      }
+      function markAll(val) {
+        membros.forEach((m) => {
+          presChecked[m.id] = val;
+          document
+            .getElementById("pi-" + m.id)
+            ?.classList.toggle("checked", val);
+        });
+      }
+      function savePresenca() {
+        const data = document.getElementById("presData").value;
+        const culto = document.getElementById("presCulto").value;
+        if (!data) {
+          toast("⚠ Selecione a data.");
+          return;
+        }
+        const pres = membros.filter((m) => presChecked[m.id]).map((m) => m.id);
+        presencas.unshift({
+          data,
+          culto,
+          presentes: pres,
+          total: membros.length,
+        });
+        presChecked = {};
+        renderPresGrid();
+        renderPresHist();
+        toast(`✓ Presença salva! ${pres.length} presente(s).`);
+      }
+      function renderPresHist() {
+        document.getElementById("presHist").innerHTML =
+          presencas
+            .slice(0, 10)
+            .map((p) => {
+              const pct = Math.round((p.presentes.length / p.total) * 100);
+              const [y, m, d] = p.data.split("-");
+              return `<tr><td>${d}/${m}/${y}</td><td>${p.culto}</td><td>${p.presentes.length}</td><td>${p.total}</td><td><span class="badge ${pct >= 75 ? "b-green" : pct >= 50 ? "b-gold" : "b-red"}">${pct}%</span></td></tr>`;
+            })
+            .join("") ||
+          `<tr><td colspan="5" style="text-align:center;color:var(--muted)">Nenhum registro.</td></tr>`;
+      }
+
+      /* ---- Departamentos ---- */
+      function renderDeps() {
+        const depMap = {};
+        membros.forEach((m) => {
+          if (m.dep) {
+            if (!depMap[m.dep]) depMap[m.dep] = [];
+            depMap[m.dep].push(m);
+          }
+        });
+        const icons = {
+          "Lírio dos Vales": "fa-seedling",
+          "Círculo de Oração": "fa-circle",
+          "Jardim de Deus": "fa-leaf",
+          "Herdeiros da Promessa": "fa-star",
+          Louvor: "fa-music",
+          Jovens: "fa-fire",
+          Diaconato: "fa-hands-holding",
+          Missões: "fa-globe",
+          Mídia: "fa-video",
+          Senhoras: "fa-heart",
+        };
+        document.getElementById("depsGrid").innerHTML = Object.entries(depMap)
+          .map(
+            ([dep, mems]) => `
+    <div class="kpi" style="cursor:pointer" onclick="alert('${dep}: ${mems.map((m) => m.nome.split(" ")[0]).join(", ")}')">
+      <i class="fas ${icons[dep] || "fa-users"}" style="color:var(--gold-2);font-size:1.4rem;margin-bottom:.5rem;display:block"></i>
+      <div class="kv" style="font-size:1.6rem">${mems.length}</div>
+      <div class="kl">${dep}</div>
+    </div>`,
+          )
+          .join("");
+      }
+
+      /* ============================================================
+   TESOURARIA
+   ============================================================ */
+      function initTesDash() {
+        renderTesKpis();
+        renderTes();
+        renderBarChart();
+        updateDonut();
+        renderTesLanc();
+      }
+
+      function getFilTransacoes() {
+        const mes = document.getElementById("tesMes").value;
+        if (mes === "all") return transacoes;
+        return transacoes.filter((t) => t.data.startsWith(mes));
+      }
+
+      function renderTesKpis() {
+        const fil = getFilTransacoes();
+        const ent = fil
+          .filter((t) => t.tipo === "entrada")
+          .reduce((a, t) => a + t.val, 0);
+        const sai = fil
+          .filter((t) => t.tipo === "saida")
+          .reduce((a, t) => a + t.val, 0);
+        const sal = ent - sai;
+        const ndiz = dizimistas.length;
+        document.getElementById("tesKpis").innerHTML = `
+    <div class="kpi g"><i class="fas fa-arrow-trend-up"></i><div class="kv">R$ ${ent.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</div><div class="kl">Total Entradas</div></div>
+    <div class="kpi r"><i class="fas fa-arrow-trend-down"></i><div class="kv">R$ ${sai.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</div><div class="kl">Total Saídas</div></div>
+    <div class="kpi"><i class="fas fa-balance-scale"></i><div class="kv" style="${sal < 0 ? "color:var(--red)!important" : ""}">R$ ${sal.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</div><div class="kl">Saldo</div></div>
+    <div class="kpi b"><i class="fas fa-hand-holding-heart"></i><div class="kv">${ndiz}</div><div class="kl">Dizimistas</div></div>`;
+      }
+
+      function renderTes() {
+        renderTesKpis();
+        const fil = getFilTransacoes().slice(0, 8);
+        document.getElementById("tesRecent").innerHTML =
+          fil
+            .map((t) => {
+              const [y, m, d] = t.data.split("-");
+              const cor =
+                t.tipo === "entrada"
+                  ? 'style="color:var(--green);font-weight:700"'
+                  : 'style="color:var(--red);font-weight:700"';
+              const pre = t.tipo === "entrada" ? "+ R$ " : "– R$ ";
+              return `<tr><td>${d}/${m}/${y}</td><td>${t.desc}</td><td>${t.categ}</td><td><span class="badge ${t.tipo === "entrada" ? "b-green" : "b-red"}">${t.tipo === "entrada" ? "Entrada" : "Saída"}</span></td><td ${cor}>${pre}${t.val.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</td></tr>`;
+            })
+            .join("") ||
+          `<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:1.5rem">Nenhum lançamento.</td></tr>`;
+        updateDonut();
+      }
+
+      function updateDonut() {
+        const fil = getFilTransacoes().filter((t) => t.tipo === "entrada");
+        const total = fil.reduce((a, t) => a + t.val, 0);
+        const diz = fil
+          .filter((t) => t.categ === "Dízimo")
+          .reduce((a, t) => a + t.val, 0);
+        const of = fil
+          .filter((t) => t.categ.includes("Oferta"))
+          .reduce((a, t) => a + t.val, 0);
+        const ev = fil
+          .filter((t) => t.categ === "Evento")
+          .reduce((a, t) => a + t.val, 0);
+        document.getElementById("donutTotal").textContent =
+          `R$ ${(total / 1000).toFixed(1)}k`;
+        // Update donut visual approximately
+        const circ = 2 * Math.PI * 45;
+        const pDiz = total ? diz / total : 0;
+        const pOf = total ? of / total : 0;
+        const pEv = total ? ev / total : 0;
+        const svg = document.getElementById("donutSvg");
+        const circles = svg.querySelectorAll("circle");
+        if (circles[1]) {
+          circles[1].setAttribute(
+            "stroke-dasharray",
+            `${pDiz * circ} ${circ * (1 - pDiz)}`,
+          );
+        }
+        if (circles[2]) {
+          circles[2].setAttribute(
+            "stroke-dasharray",
+            `${pOf * circ} ${circ * (1 - pOf)}`,
+          );
+          circles[2].setAttribute("stroke-dashoffset", `${-pDiz * circ}`);
+        }
+        if (circles[3]) {
+          circles[3].setAttribute(
+            "stroke-dasharray",
+            `${pEv * circ} ${circ * (1 - pEv)}`,
+          );
+          circles[3].setAttribute(
+            "stroke-dashoffset",
+            `${-(pDiz + pOf) * circ}`,
+          );
+        }
+      }
+
+      function renderBarChart() {
+        const months = ["Dez", "Jan", "Fev", "Mar", "Abr", "Mai"];
+        const data = [
+          { mes: "2024-12", e: 9800, s: 3200 },
+          { mes: "2025-01", e: 11200, s: 3800 },
+          { mes: "2025-02", e: 8600, s: 4100 },
+          { mes: "2025-03", e: 12800, s: 3500 },
+          { mes: "2025-04", e: 14200, s: 4000 },
+          {
+            mes: "2025-05",
+            e: getFilTransacoes()
+              .filter((t) => t.tipo === "entrada")
+              .reduce((a, t) => a + t.val, 0),
+            s: getFilTransacoes()
+              .filter((t) => t.tipo === "saida")
+              .reduce((a, t) => a + t.val, 0),
+          },
+        ];
+        const maxV = Math.max(...data.map((d) => Math.max(d.e, d.s)), 1);
+        document.getElementById("barChart").innerHTML = data
+          .map((d, i) => {
+            const hE = Math.max(8, Math.round((d.e / maxV) * 100));
+            const hS = Math.max(4, Math.round((d.s / maxV) * 100));
+            const ek = (d.e / 1000).toFixed(1) + "k",
+              sk = (d.s / 1000).toFixed(1) + "k";
+            return `<div class="bg"><div class="bi" style="height:${hE}%">${ek}</div><div class="bo" style="height:${hS}%">${sk}</div><span>${months[i]}</span></div>`;
+          })
+          .join("");
+      }
+
+      /* ---- Lançamentos ---- */
+      function updateTesCateg() {
+        const tipo = document.getElementById("tesTipo").value;
+        const c = document.getElementById("tesCateg");
+        c.innerHTML =
+          tipo === "entrada"
+            ? "<option>Dízimo</option><option>Oferta</option><option>Oferta Missionária</option><option>Evento</option><option>Outras Entradas</option>"
+            : "<option>Despesa Fixa</option><option>Manutenção</option><option>Missões</option><option>Material</option><option>Outras Saídas</option>";
+      }
+      function clearTesForm() {
+        document.getElementById("tesEditId").value = "";
+        document.getElementById("tesTipo").value = "entrada";
+        updateTesCateg();
+        ["tesDesc", "tesVal", "tesData", "tesObs"].forEach(
+          (id) => (document.getElementById(id).value = ""),
+        );
+      }
+      function saveTes() {
+        const desc = document.getElementById("tesDesc").value.trim();
+        const val = parseFloat(document.getElementById("tesVal").value);
+        const data = document.getElementById("tesData").value;
+        if (!desc || isNaN(val) || val <= 0 || !data) {
+          toast("⚠ Preencha descrição, valor e data.");
+          return;
+        }
+        const editId = document.getElementById("tesEditId").value;
+        const t = {
+          tipo: document.getElementById("tesTipo").value,
+          categ: document.getElementById("tesCateg").value,
+          desc,
+          val,
+          data,
+          obs: document.getElementById("tesObs").value,
+        };
+        if (editId) {
+          const idx = transacoes.findIndex((x) => x.id === +editId);
+          if (idx > -1) transacoes[idx] = { ...transacoes[idx], ...t };
+          toast("✓ Lançamento atualizado!");
+        } else {
+          t.id = tesNextId++;
+          transacoes.unshift(t);
+          toast(
+            `✓ ${t.tipo === "entrada" ? "Entrada" : "Saída"} de R$ ${val.toFixed(2)} registrada!`,
+          );
+        }
+        clearTesForm();
+        renderTesLanc();
+        renderTesKpis();
+        renderTes();
+        renderBarChart();
+      }
+      function renderTesLanc() {
+        const q = (
+          document.getElementById("tesSearch").value || ""
+        ).toLowerCase();
+        const tip = document.getElementById("tesTipoFil").value;
+        const cat = document.getElementById("tesCategFil").value;
+        const fil = transacoes.filter((t) => {
+          return (
+            (!q || t.desc.toLowerCase().includes(q)) &&
+            (!tip || t.tipo === tip) &&
+            (!cat || t.categ === cat)
+          );
+        });
+        document.getElementById("tesLancTbody").innerHTML = fil.length
+          ? fil
+              .map((t) => {
+                const [y, m, d] = t.data.split("-");
+                const cor =
+                  t.tipo === "entrada"
+                    ? 'style="color:var(--green);font-weight:700"'
+                    : 'style="color:var(--red);font-weight:700"';
+                const pre = t.tipo === "entrada" ? "+ R$ " : "– R$ ";
+                return `<tr>
+      <td>${d}/${m}/${y}</td><td>${t.desc}</td><td>${t.categ}</td>
+      <td><span class="badge ${t.tipo === "entrada" ? "b-green" : "b-red"}">${t.tipo === "entrada" ? "Entrada" : "Saída"}</span></td>
+      <td ${cor}>${pre}${t.val.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</td>
+      <td style="color:var(--muted);font-size:.78rem">${t.obs || "—"}</td>
+      <td><div class="tbl-actions">
+        <button class="btn-sm btn-e" onclick="editTes(${t.id})"><i class="fas fa-edit"></i></button>
+        <button class="btn-sm btn-d" onclick="delTes(${t.id})"><i class="fas fa-trash"></i></button>
+      </div></td>
+    </tr>`;
+              })
+              .join("")
+          : `<tr><td colspan="7" style="text-align:center;color:var(--muted);padding:1.5rem">Nenhum lançamento encontrado.</td></tr>`;
+      }
+      function editTes(id) {
+        const t = transacoes.find((x) => x.id === id);
+        if (!t) return;
+        document.getElementById("tesEditId").value = id;
+        document.getElementById("tesTipo").value = t.tipo;
+        updateTesCateg();
+        document.getElementById("tesCateg").value = t.categ;
+        document.getElementById("tesDesc").value = t.desc;
+        document.getElementById("tesVal").value = t.val;
+        document.getElementById("tesData").value = t.data;
+        document.getElementById("tesObs").value = t.obs || "";
+        switchTab(
+          "tes",
+          "lancamentos",
+          document.querySelector("#tesDash .tabs .tab:nth-child(2)"),
+        );
+        document.getElementById("tesDesc").focus();
+      }
+      function delTes(id) {
+        if (!confirm("Excluir este lançamento?")) return;
+        transacoes = transacoes.filter((t) => t.id !== id);
+        renderTesLanc();
+        renderTesKpis();
+        renderTes();
+        toast("✓ Lançamento excluído.");
+      }
+
+      /* ---- Dizimistas ---- */
+      function openDizModal() {
+        document.getElementById("dizMem").innerHTML = membros
+          .map((m) => `<option value="${m.id}">${m.nome}</option>`)
+          .join("");
+        document.getElementById("dizData").value = new Date()
+          .toISOString()
+          .split("T")[0];
+        document.getElementById("dizVal").value = "";
+        document.getElementById("dizObs").value = "";
+        document.getElementById("dizModal").classList.add("open");
+      }
+      function closeDizModal() {
+        document.getElementById("dizModal").classList.remove("open");
+      }
+      function saveDiz() {
+        const memId = +document.getElementById("dizMem").value;
+        const val = parseFloat(document.getElementById("dizVal").value);
+        const data = document.getElementById("dizData").value;
+        if (!val || val <= 0 || !data) {
+          toast("⚠ Informe o valor e a data.");
+          return;
+        }
+        // Add transaction
+        transacoes.unshift({
+          id: tesNextId++,
+          tipo: "entrada",
+          categ: "Dízimo",
+          desc: `Dízimo — ${membros.find((m) => m.id === memId)?.nome || "Membro"}`,
+          val,
+          data,
+          obs: document.getElementById("dizObs").value,
+        });
+        // Update dizimista record
+        const idx = dizimistas.findIndex((d) => d.memId === memId);
+        if (idx > -1) {
+          dizimistas[idx].ultimo = data;
+          dizimistas[idx].totalAnual += val;
+        } else {
+          dizimistas.push({
+            memId,
+            ultimo: data,
+            totalAnual: val,
+            hist: [val],
+          });
+        }
+        closeDizModal();
+        renderDiz();
+        renderTesKpis();
+        renderTes();
+        toast(`✓ Dízimo de R$ ${val.toFixed(2)} registrado!`);
+      }
+      function renderDiz() {
+        const q = (
+          document.getElementById("dizSearch").value || ""
+        ).toLowerCase();
+        const fil = dizimistas.filter((d) => {
+          const m = membros.find((x) => x.id === d.memId);
+          return !q || (m && m.nome.toLowerCase().includes(q));
+        });
+        document.getElementById("dizTbody").innerHTML = fil.length
+          ? fil
+              .map((d) => {
+                const m = membros.find((x) => x.id === d.memId);
+                if (!m) return "";
+                const [y, mo, dy] = d.ultimo.split("-");
+                const ateDia =
+                  (new Date() - new Date(d.ultimo)) / (1000 * 60 * 60 * 24);
+                const stBadge =
+                  ateDia <= 35 ? "b-green" : ateDia <= 65 ? "b-gold" : "b-red";
+                const stLabel =
+                  ateDia <= 35
+                    ? "Em dia"
+                    : ateDia <= 65
+                      ? "Irregular"
+                      : "Pendente";
+                return `<tr>
+      <td><strong>${m.nome}</strong></td>
+      <td>${m.dep || "—"}</td>
+      <td>${dy}/${mo}/${y}</td>
+      <td><strong>R$ ${d.totalAnual.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</strong></td>
+      <td><span class="badge ${stBadge}">${stLabel}</span></td>
+    </tr>`;
+              })
+              .join("")
+          : `<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:1.5rem">Nenhum dizimista encontrado.</td></tr>`;
+      }
+
+      /* ---- Relatório ---- */
+      function gerarRel() {
+        const mes = document.getElementById("relMes").value;
+        const fil =
+          mes === "all"
+            ? transacoes
+            : transacoes.filter((t) => t.data.startsWith(mes));
+        const ent = fil
+          .filter((t) => t.tipo === "entrada")
+          .reduce((a, t) => a + t.val, 0);
+        const sai = fil
+          .filter((t) => t.tipo === "saida")
+          .reduce((a, t) => a + t.val, 0);
+        const sal = ent - sai;
+        // Group by category
+        const categMap = {};
+        fil.forEach((t) => {
+          if (!categMap[t.categ])
+            categMap[t.categ] = { tipo: t.tipo, total: 0 };
+          categMap[t.categ].total += t.val;
+        });
+        const rows = Object.entries(categMap)
+          .map(([k, v]) => {
+            return `<tr><td>${k}</td><td><span class="badge ${v.tipo === "entrada" ? "b-green" : "b-red"}">${v.tipo === "entrada" ? "Entrada" : "Saída"}</span></td><td style="font-weight:700;color:${v.tipo === "entrada" ? "var(--green)" : "var(--red)"}">R$ ${v.total.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</td></tr>`;
+          })
+          .join("");
+        document.getElementById("relBody").innerHTML = `
+    <div class="cards-row" style="margin-bottom:1.4rem">
+      <div class="kpi g"><i class="fas fa-arrow-up"></i><div class="kv">R$ ${ent.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</div><div class="kl">Total Entradas</div></div>
+      <div class="kpi r"><i class="fas fa-arrow-down"></i><div class="kv">R$ ${sai.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</div><div class="kl">Total Saídas</div></div>
+      <div class="kpi"><i class="fas fa-balance-scale"></i><div class="kv" style="${sal < 0 ? "color:var(--red)!important" : ""}">R$ ${sal.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</div><div class="kl">Saldo do Período</div></div>
+      <div class="kpi b"><i class="fas fa-percentage"></i><div class="kv">${ent > 0 ? Math.round((sai / ent) * 100) : 0}%</div><div class="kl">Comprometimento</div></div>
+    </div>
+    <div class="tbl-wrap"><table><thead><tr><th>Categoria</th><th>Tipo</th><th>Total</th></tr></thead><tbody>${rows || '<tr><td colspan="3" style="text-align:center;color:var(--muted);padding:1.5rem">Nenhum lançamento no período.</td></tr>'}</tbody></table></div>
+    <p style="margin-top:1rem;font-size:.76rem;color:var(--muted);text-align:right">Relatório gerado em ${new Date().toLocaleString("pt-BR")} · IEADIP Guimarânia</p>`;
+      }
+
+      /* ===== GALLERY HOVER ===== */
+      document.querySelectorAll(".gi").forEach((g) => {
+        g.addEventListener(
+          "mouseenter",
+          () =>
+            (g.style.boxShadow =
+              "0 20px 60px rgba(0,0,0,.6),0 0 0 1px rgba(201,168,76,.5)"),
+        );
+        g.addEventListener("mouseleave", () => (g.style.boxShadow = ""));
+      });
+
+      /* ===== PARALLAX HERO ===== */
+      const heroBg = document.querySelector(".hero-bg");
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (window.scrollY < window.innerHeight)
+            heroBg.style.transform = `translateY(${window.scrollY * 0.28}px)`;
+        },
+        { passive: true },
+      );
+
+      console.log(
+        "%c✝ IEADIP GUIMARÂNIA",
+        "color:#C9A84C;font-size:18px;font-weight:bold;",
+      );
+    </script>
+  </body>
+</html>
