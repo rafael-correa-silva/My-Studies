@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oleo+Script:wght@400;700&family=Parisienne&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --cor01: #7e8eeb;
+    --cor02: #3549f5;
+    --cor03: #2803f8;
+    --cor04: #0c0480;
+    --cor05: #010135;
+ 
+    --font01: 'Bebas Neue', cursive;
+    --font02: 'Oleo Script', cursive;
+    --font03: 'Parisienne', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cor01);   
+}
+
+header > h1 {
+    text-align: center;
+    font-size: 40px;
+    background-image: linear-gradient(var(--cor03), var(--cor04));
+    text-shadow: 0px 7px 7px rgba(0, 0, 0, 0.288);
+    font-family: var(--font01);
+    min-height: 50px;
+    padding: 30px;
+}
+
+nav {
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.192);
+}
+
+nav > a {
+    color: var(--cor1);
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.5s;
+}
+
+nav >a:hover {
+    background-color: var(--cor04);
+    color: white;
+    
+}
+
+main img {
+    min-width: 150px;
+    max-height: 250px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.392);
+    margin: 0px 50px 0px 50px;
+}
+
+main {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    padding: 20px;
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    background-color: white;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.418);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+}
+
+main h1 {
+    font-family: 'Bebas Neue';
+    text-shadow: none;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+main p {
+    text-align: justify;
+    margin: 15px 0px;
+    font-size: 1em;
+    line-height: 1em;
+    text-indent: 30px;
+}
+
+main h2 {
+    font-family: 'Bebas Neue';
+    text-shadow: none;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+aside {
+    margin-top: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+    font-family: 'Arial';
+}
+
+aside > ul {
+    list-style-type: '\2714\00A0\00A0';
+    list-style-position: inside;
+    margin: 0px;
+}
+
+aside > ul#links {
+    text-align: center;  
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    background-image: linear-gradient(var(--cor03), var(--cor04));
+    padding: 1px;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+footer p {
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor1);
+}
