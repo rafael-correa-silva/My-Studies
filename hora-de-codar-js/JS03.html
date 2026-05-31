@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserir JavaScript</title>
+    <script src="javascript/script.js"></script> <!--Script vai ser iniciado antes do body ser carregado -->
+</head>
+<body>
+    <script>
+        console.log("Script no body"); //Script vai ser iniciado depois do body ser carregado
+    </script>
+    <script src="javascript/script2.js"></script> <!--Script vai ser iniciado depois do body ser carregado, pois o script está no final do body -->
+</body>
+</html>
